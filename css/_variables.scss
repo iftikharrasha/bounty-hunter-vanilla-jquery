@@ -1,34 +1,29 @@
-@font-face {
-    font-family: 'SourceSansPro', sans-serif;
-    src: url(../font/SourceSansPro-Regular.ttf);
-}
-
-@font-face {
-    font-family: 'SourceSansPro-Bold', sans-serif;
-    src: url(../font/SourceSansPro-Bold.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
   
 :root {
     --white: #FFFFFF;
+    --gray: #CFCFCF;
     --red: #FF0000;
     --green: #4CAF50;
-    --chocolate: #976116;
     --black: #474747;
+    --chocolate: #976116;
     --primary: #FFB857;
-    --accent: #CFCFCF;
+    --accent: #F8A12A;
     --secondary: #F39109;
+    --font: 'Source Sans Pro', sans-serif;
 }
 
 $white: var(--white);
 $red: var(--red);
 $green: var(--green);
 $chocolate: var(--chocolate);
+$gray: var(--gray);
 $black: var(--black);
 $primary: var(--primary);
 $accent: var(--accent);
 $secondary: var(--secondary);
-$font1: 'SourceSansPro', 'san-serif';
-$font2: 'SourceSansPro-Bold', 'san-serif';
+
+$font: var(--font);
 
 // @mixin fontMaker($family, $case) {
 //     font-family: $family;

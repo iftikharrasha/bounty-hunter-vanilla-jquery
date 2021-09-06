@@ -1,21 +1,231 @@
-@font-face {
-  font-family: 'SourceSansPro', sans-serif;
-  src: url(../font/SourceSansPro-Regular.ttf);
-}
-
-@font-face {
-  font-family: 'SourceSansPro-Bold', sans-serif;
-  src: url(../font/SourceSansPro-Bold.ttf);
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap");
 :root {
   --white: #FFFFFF;
+  --gray: #CFCFCF;
   --red: #FF0000;
   --green: #4CAF50;
-  --chocolate: #976116;
   --black: #474747;
+  --chocolate: #976116;
   --primary: #FFB857;
-  --accent: #CFCFCF;
+  --accent: #F8A12A;
   --secondary: #F39109;
+  --font: 'Source Sans Pro', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: linear-gradient(145deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  margin: 0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a, select, input, textarea, button {
+  outline: none !important;
+}
+
+.btn:focus, .btn.focus, .form-control:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-link:focus, .btn-link.focus {
+  text-decoration: none;
+}
+
+/*color pallette groups*/
+/* font sizing groups */
+.reg--12 {
+  font-size: 0.75rem;
+}
+
+.reg--20 {
+  font-size: 1.25rem;
+}
+
+.bold--12 {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.bold--16 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.bold--18 {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.bold--20 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.bold--30 {
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.bold--45 {
+  font-size: 2.8125rem;
+  font-weight: 700;
+}
+
+/* hero starts */
+.bounty {
+  background-color: var(--accent);
+  padding: 1rem 1.25rem;
+}
+
+.hero--banner {
+  background-color: var(--white);
+}
+
+.hero--banner .survey-text h1 {
+  color: var(--accent);
+}
+
+.hero--banner .survey-text h2 {
+  position: relative;
+  margin: 0 auto;
+  max-width: 37.5rem;
+}
+
+.hero--banner .survey-text h2:before, .hero--banner .survey-text h2:after {
+  position: absolute;
+  content: "";
+  width: 6.25rem;
+  height: 0.1875rem;
+  top: 50%;
+  background: var(--black);
+}
+
+.hero--banner .survey-text h2:before {
+  left: 5rem;
+}
+
+.hero--banner .survey-text h2:after {
+  right: 5rem;
+}
+
+.hero--banner .bounty-card {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  -webkit-box-shadow: 0.1rem 0.8rem 1.5rem;
+          box-shadow: 0.1rem 0.8rem 1.5rem;
+}
+
+.hero--banner .bounty-card .circle-wrapper {
+  position: relative;
+}
+
+.hero--banner .bounty-card .circle-wrapper .subpromo-wrapper {
+  position: absolute;
+  background-color: var(--accent);
+  color: var(--white);
+  width: 135px;
+  height: 135px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 100%;
+  line-height: 1;
+  top: -20px;
+  right: 40px;
+}
+
+.hero--banner .bounty-card .circle-wrapper .promo-wrapper {
+  position: absolute;
+  background-color: var(--white);
+  width: 180px;
+  height: 180px;
+  border-radius: 100%;
+  border: 2px solid #F5F5F5;
+}
+
+.hero--banner .bounty-card .circle-wrapper .promo-wrapper .reward-big-circle {
+  padding: 30px 25px 30px 25px;
+  -webkit-animation: heartbeat 3s infinite linear;
+          animation: heartbeat 3s infinite linear;
+}
+
+@-webkit-keyframes heartbeat {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
 }
 /*# sourceMappingURL=style.css.map */

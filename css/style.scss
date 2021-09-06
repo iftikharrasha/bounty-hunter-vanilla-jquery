@@ -1,2 +1,214 @@
 @import './variables';
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font;
+    background: linear-gradient(145deg, $primary 0%, $secondary 100%);
+    color: $black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all 0.3s ease-in-out;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+	margin:0;
+	padding:0;
+    font-weight: 500;
+}
+
+ul{
+	margin: 0;
+	padding:0;
+	list-style: none;
+}
+
+a{
+	margin:0;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration:none;
+}
+
+a, select , input , textarea , button{
+	outline: none !important;
+}
+
+.btn:focus, .btn.focus, .form-control:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+.btn-link:focus, .btn-link.focus {
+    text-decoration: none;
+}
+
+/*color pallette groups*/
+// .color--1{
+//     color: $white;
+// }
+
+// .color--2{
+//     color: $gray;
+// }
+
+// .color--3{
+//     color: $red;
+// }
+
+// .color--4{
+//     color: $green;
+// }
+
+// .color--5{
+//     color: $black;
+// }
+
+// .color--6{
+//     color: $chocolate;
+// }
+
+// .color--7{
+//     color: $primary;
+// }
+
+// .color--8{
+//     color: $accent;
+// }
+
+// .color--9{
+//     color: $secondary;
+// }
+
+/* font sizing groups */
+.reg--12 {
+    font-size: 0.75rem;
+}
+
+.reg--20 {
+    font-size: 1.25rem;
+}
+
+.bold--12 {
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.bold--16 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.bold--18 {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.bold--20 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.bold--30 {
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+.bold--45 {
+  font-size: 2.8125rem;
+  font-weight: 700;
+}
+
+/* hero starts */
+.bounty{
+    background-color: $accent;
+    padding: 1rem 1.25rem;
+}
+
+.hero--banner{
+    background-color: $white;
+    .survey-text{
+        h1{
+            color: $accent;
+        }
+        h2 {
+            position: relative;
+            margin: 0 auto;
+            max-width: 37.5rem;
+            &:before, &:after {
+                position: absolute;
+                content: "";
+                width: 6.25rem;
+                height: 0.1875rem;
+                top: 50%;
+                background: $black;
+            }
+            &:before {
+                left: 5rem;
+            }
+            &:after {
+                right: 5rem;
+            }
+        }
+    }
+
+    .bounty-card{
+        width: 80%;
+        margin: 0 auto;
+        padding: 2.5rem 2rem;
+        border-radius: 12px;
+        box-shadow: 0.1rem 0.8rem 1.5rem;
+        .circle-wrapper{
+            position: relative;
+            .subpromo-wrapper {
+                position: absolute;
+                background-color: $accent;
+                color: $white;
+                width: 135px;
+                height: 135px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 100%;
+                line-height: 1;
+                top: -20px;
+                right: 40px;
+            }
+            .promo-wrapper {
+                position: absolute;
+                background-color: $white;
+                width: 180px;
+                height: 180px;
+                border-radius: 100%;
+                border: 2px solid #F5F5F5;
+                .reward-big-circle {
+                    padding: 30px 25px 30px 25px;
+                    animation: heartbeat 3s infinite linear;
+                    @keyframes heartbeat {
+                        0% {
+                            transform: scale(0.8);
+                        }
+                        50% {
+                            transform: scale(1);
+                        }
+                        100% {
+                            transform: scale(0.8);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
