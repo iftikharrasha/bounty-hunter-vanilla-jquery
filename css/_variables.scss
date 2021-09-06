@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'SourceSansPro', sans-serif;
+    src: url(../font/SourceSansPro-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'SourceSansPro-Bold', sans-serif;
+    src: url(../font/SourceSansPro-Bold.ttf);
+}
+  
+:root {
+    --white: #FFFFFF;
+    --red: #FF0000;
+    --green: #4CAF50;
+    --chocolate: #976116;
+    --black: #474747;
+    --primary: #FFB857;
+    --accent: #CFCFCF;
+    --secondary: #F39109;
+}
+
+$white: var(--white);
+$red: var(--red);
+$green: var(--green);
+$chocolate: var(--chocolate);
+$black: var(--black);
+$primary: var(--primary);
+$accent: var(--accent);
+$secondary: var(--secondary);
+$font1: 'SourceSansPro', 'san-serif';
+$font2: 'SourceSansPro-Bold', 'san-serif';
+
+// @mixin fontMaker($family, $case) {
+//     font-family: $family;
+//     text-transform: $case;
+// }
+
+// @mixin flexCenter {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+  

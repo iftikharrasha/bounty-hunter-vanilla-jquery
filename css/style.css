@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'SourceSansPro', sans-serif;
+  src: url(../font/SourceSansPro-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'SourceSansPro-Bold', sans-serif;
+  src: url(../font/SourceSansPro-Bold.ttf);
+}
+
+:root {
+  --white: #FFFFFF;
+  --red: #FF0000;
+  --green: #4CAF50;
+  --chocolate: #976116;
+  --black: #474747;
+  --primary: #FFB857;
+  --accent: #CFCFCF;
+  --secondary: #F39109;
+}
+/*# sourceMappingURL=style.css.map */
