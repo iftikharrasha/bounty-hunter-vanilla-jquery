@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap");
 :root {
   --white: #FFFFFF;
   --gray: #CFCFCF;
@@ -24,9 +24,16 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (max-width: 576px) {
+  html html {
+    font-size: 12px;
+  }
+}
+
 body {
   font-family: var(--font);
-  background: linear-gradient(145deg, var(--primary) 0%, var(--secondary) 100%);
+  background: -webkit-gradient(linear, left top, right top, from(var(--primary)), color-stop(35%, var(--secondary)));
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 35%);
   color: var(--black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -69,7 +76,6 @@ a, select, input, textarea, button {
   text-decoration: none;
 }
 
-/*color pallette groups*/
 /* font sizing groups */
 .reg--12 {
   font-size: 0.75rem;
@@ -109,27 +115,38 @@ a, select, input, textarea, button {
   font-weight: 700;
 }
 
-/* hero starts */
-.bounty {
+.black--23 {
+  font-size: 1.4375rem;
+  font-weight: 900;
+}
+
+/* header starts */
+.header {
   background-color: var(--accent);
   padding: 1rem 1.25rem;
 }
 
-.hero--banner {
-  background-color: var(--white);
+/* hero starts */
+.hero .hero--banner {
+  background-image: url(../img/hero-bg.webp);
+  width: 100%;
+  min-height: 43.75rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.hero--banner .survey-text h1 {
+.hero .hero--banner .survey-text h1 {
   color: var(--accent);
 }
 
-.hero--banner .survey-text h2 {
+.hero .hero--banner .survey-text h2 {
   position: relative;
   margin: 0 auto;
   max-width: 37.5rem;
 }
 
-.hero--banner .survey-text h2:before, .hero--banner .survey-text h2:after {
+.hero .hero--banner .survey-text h2:before, .hero .hero--banner .survey-text h2:after {
   position: absolute;
   content: "";
   width: 6.25rem;
@@ -138,63 +155,58 @@ a, select, input, textarea, button {
   background: var(--black);
 }
 
-.hero--banner .survey-text h2:before {
+.hero .hero--banner .survey-text h2:before {
   left: 5rem;
 }
 
-.hero--banner .survey-text h2:after {
+.hero .hero--banner .survey-text h2:after {
   right: 5rem;
 }
 
-.hero--banner .bounty-card {
+.hero .hero--banner .bounty--card {
+  background-image: url(../img/pattern.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 80%;
   margin: 0 auto;
   padding: 2.5rem 2rem;
-  border-radius: 12px;
-  -webkit-box-shadow: 0.1rem 0.8rem 1.5rem;
-          box-shadow: 0.1rem 0.8rem 1.5rem;
+  border-radius: 0.75rem;
+  -webkit-box-shadow: 0rem 0rem 1rem;
+          box-shadow: 0rem 0rem 1rem;
 }
 
-.hero--banner .bounty-card .circle-wrapper {
+.hero .hero--banner .bounty--card .circle--wrapper {
   position: relative;
 }
 
-.hero--banner .bounty-card .circle-wrapper .subpromo-wrapper {
+.hero .hero--banner .bounty--card .circle--wrapper .subPromo {
   position: absolute;
   background-color: var(--accent);
   color: var(--white);
-  width: 135px;
-  height: 135px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: 8.4375rem;
+  height: 8.4375rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   border-radius: 100%;
   line-height: 1;
-  top: -20px;
-  right: 40px;
+  top: -1.25rem;
+  right: 2.5rem;
 }
 
-.hero--banner .bounty-card .circle-wrapper .promo-wrapper {
+.hero .hero--banner .bounty--card .circle--wrapper .promo {
   position: absolute;
   background-color: var(--white);
-  width: 180px;
-  height: 180px;
+  width: 11.25rem;
+  height: 11.25rem;
   border-radius: 100%;
-  border: 2px solid #F5F5F5;
+  border: 0.125rem solid #F5F5F5;
 }
 
-.hero--banner .bounty-card .circle-wrapper .promo-wrapper .reward-big-circle {
-  padding: 30px 25px 30px 25px;
+.hero .hero--banner .bounty--card .circle--wrapper .promo .promo--circle {
+  padding: 1.875rem 1.5625rem;
   -webkit-animation: heartbeat 3s infinite linear;
           animation: heartbeat 3s infinite linear;
 }
@@ -227,5 +239,95 @@ a, select, input, textarea, button {
     -webkit-transform: scale(0.8);
             transform: scale(0.8);
   }
+}
+
+.hero .hero--banner .start .start--btn {
+  position: relative;
+}
+
+.hero .hero--banner .start .start--btn :before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(60deg, transparent 0%, transparent 35%, #ffffff99 50%, transparent 62%, transparent 100%);
+  -webkit-animation-name: shimmer;
+          animation-name: shimmer;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background-repeat: no-repeat;
+  border-radius: 3.5rem;
+}
+
+@-webkit-keyframes shimmer {
+  0% {
+    background-position: -62rem 0%;
+  }
+  100% {
+    background-position: 62rem 0%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -62rem 0%;
+  }
+  100% {
+    background-position: 62rem 0%;
+  }
+}
+
+.hero .hero--banner .start .start--btn button {
+  background: linear-gradient(-45deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--white);
+  border-radius: 3.5rem;
+  border: 0.5rem solid transparent;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+  padding: 1rem 2.5rem;
+}
+
+.hero .hero--banner .start .start--btn button img {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.hero .hero--banner .start .start--btn button:hover {
+  border: 0.5rem solid var(--accent);
+}
+
+.hero .hero--banner .start .start--btn button:hover img {
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
+}
+
+.hero .expired {
+  background-color: var(--black);
+  color: var(--white);
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  width: 100%;
+}
+
+.hero .expired p .timer {
+  background-color: var(--red);
+  border-radius: 1rem;
+}
+
+/* footer starts */
+.footer {
+  padding: 7rem 0;
+}
+
+.footer .conditions {
+  width: 80%;
+  margin: 0 auto;
+  color: var(--chocolate);
 }
 /*# sourceMappingURL=style.css.map */

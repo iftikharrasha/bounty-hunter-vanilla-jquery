@@ -9,11 +9,16 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
+    @media (max-width: 576px) {
+        html {
+          font-size: 12px;
+        }
+    }
 }
 
 body {
     font-family: $font;
-    background: linear-gradient(145deg, $primary 0%, $secondary 100%);
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 35%);
     color: $black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -54,43 +59,6 @@ a, select , input , textarea , button{
     text-decoration: none;
 }
 
-/*color pallette groups*/
-// .color--1{
-//     color: $white;
-// }
-
-// .color--2{
-//     color: $gray;
-// }
-
-// .color--3{
-//     color: $red;
-// }
-
-// .color--4{
-//     color: $green;
-// }
-
-// .color--5{
-//     color: $black;
-// }
-
-// .color--6{
-//     color: $chocolate;
-// }
-
-// .color--7{
-//     color: $primary;
-// }
-
-// .color--8{
-//     color: $accent;
-// }
-
-// .color--9{
-//     color: $secondary;
-// }
-
 /* font sizing groups */
 .reg--12 {
     font-size: 0.75rem;
@@ -130,85 +98,174 @@ a, select , input , textarea , button{
   font-weight: 700;
 }
 
-/* hero starts */
-.bounty{
+.black--23 {
+    font-size: 1.4375rem;
+    font-weight: 900;
+}
+
+
+/* header starts */
+.header{
     background-color: $accent;
     padding: 1rem 1.25rem;
 }
 
-.hero--banner{
-    background-color: $white;
-    .survey-text{
-        h1{
-            color: $accent;
+/* hero starts */
+.hero{
+    .hero--banner{
+        background-image: url(../img/hero-bg.webp);
+        width: 100%;
+        min-height: 43.75rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .survey-text{
+            h1{
+                color: $accent;
+            }
+            h2 {
+                position: relative;
+                margin: 0 auto;
+                max-width: 37.5rem;
+                &:before, &:after {
+                    position: absolute;
+                    content: "";
+                    width: 6.25rem;
+                    height: 0.1875rem;
+                    top: 50%;
+                    background: $black;
+                }
+                &:before {
+                    left: 5rem;
+                }
+                &:after {
+                    right: 5rem;
+                }
+            }
         }
-        h2 {
-            position: relative;
+    
+        .bounty--card{
+            background-image: url(../img/pattern.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 80%;
             margin: 0 auto;
-            max-width: 37.5rem;
-            &:before, &:after {
-                position: absolute;
-                content: "";
-                width: 6.25rem;
-                height: 0.1875rem;
-                top: 50%;
-                background: $black;
-            }
-            &:before {
-                left: 5rem;
-            }
-            &:after {
-                right: 5rem;
-            }
-        }
-    }
-
-    .bounty-card{
-        width: 80%;
-        margin: 0 auto;
-        padding: 2.5rem 2rem;
-        border-radius: 12px;
-        box-shadow: 0.1rem 0.8rem 1.5rem;
-        .circle-wrapper{
-            position: relative;
-            .subpromo-wrapper {
-                position: absolute;
-                background-color: $accent;
-                color: $white;
-                width: 135px;
-                height: 135px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                border-radius: 100%;
-                line-height: 1;
-                top: -20px;
-                right: 40px;
-            }
-            .promo-wrapper {
-                position: absolute;
-                background-color: $white;
-                width: 180px;
-                height: 180px;
-                border-radius: 100%;
-                border: 2px solid #F5F5F5;
-                .reward-big-circle {
-                    padding: 30px 25px 30px 25px;
-                    animation: heartbeat 3s infinite linear;
-                    @keyframes heartbeat {
-                        0% {
-                            transform: scale(0.8);
-                        }
-                        50% {
-                            transform: scale(1);
-                        }
-                        100% {
-                            transform: scale(0.8);
+            padding: 2.5rem 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0rem 0rem 1rem;
+            .circle--wrapper{
+                position: relative;
+                .subPromo {
+                    position: absolute;
+                    background-color: $accent;
+                    color: $white;
+                    width: 8.4375rem;
+                    height: 8.4375rem;
+                    flex-direction: column;
+                    border-radius: 100%;
+                    line-height: 1;
+                    top: -1.25rem;
+                    right: 2.5rem;
+                }
+                .promo {
+                    position: absolute;
+                    background-color: $white;
+                    width: 11.25rem;
+                    height: 11.25rem;
+                    border-radius: 100%;
+                    border: 0.125rem solid #F5F5F5;
+                    .promo--circle {
+                        padding: 1.875rem 1.5625rem;
+                        animation: heartbeat 3s infinite linear;
+                        @keyframes heartbeat {
+                            0% {
+                                transform: scale(0.8);
+                            }
+                            50% {
+                                transform: scale(1);
+                            }
+                            100% {
+                                transform: scale(0.8);
+                            }
                         }
                     }
                 }
             }
         }
+        .start{
+            .start--btn{
+                position: relative;
+                :before{
+                    content:'';
+                    display:block;
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    bottom:0;
+                    right:0;
+                    background: linear-gradient(60deg, transparent 0%, transparent 35%, #ffffff99 50%, transparent 62%, transparent 100%);
+                    animation-name: shimmer;
+                    animation-duration: 4s;
+                    animation-iteration-count: infinite;
+                    background-repeat:no-repeat;
+                    border-radius: 3.5rem;
+                  }
+                  @keyframes shimmer {
+                    0% {
+                      background-position: -62rem 0%;
+                    }
+                    100% {
+                      background-position: 62rem 0%;
+                    }
+                  }
+                button{
+                    background: linear-gradient(-45deg, $primary 0%, $secondary 100%);
+                    color: $white;
+                    border-radius: 3.5rem;
+                    border: 0.5rem solid transparent;
+                    transition: all .1s ease-in-out;
+                    padding: 1rem 2.5rem;
+                    // border: 7px solid;
+                    // border-image-slice: 1;
+                    // border-width: 7px;
+                    // border-image-source: linear-gradient(to left, #00C853, #B2FF59);
+                    img{
+                        transition: all .3s ease-in-out;
+                    }
+                    &:hover{
+                        border: 0.5rem solid $accent;
+                        img{
+                            transform: translateX(1rem);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .expired{
+        background-color: $black;
+        color: $white;
+        position: fixed;
+        z-index: 999;
+        bottom: 0;
+        width: 100%;
+        p{
+          .timer{
+              background-color: $red;
+              border-radius: 1rem;
+          }
+        }
+    }
+}
+
+/* footer starts */
+.footer{
+    padding: 7rem 0;
+    .conditions{
+        width: 80%;
+        margin: 0 auto;
+        color: $chocolate;
     }
 }

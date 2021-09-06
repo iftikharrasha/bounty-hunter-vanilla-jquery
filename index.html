@@ -11,20 +11,20 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <!--top text for bounties-->
+    <header class="header text-center">
+        <h6 class="bold--16 text-white">Over $3,200,000 in Offer Rewards claimed so far!</h6>
+    </header>
     <main>
         <!--screen #1-->
         <section class="hero">
-            <!--top text for bounties-->
-            <div class="bounty text-center">
-                <h6 class="bold--16 text-white">Over $3,200,000 in Offer Rewards claimed so far!</h6>
-            </div>
             <div class="hero--banner">
                 <div class="container">
                     <div class="survey-text text-center py-5">
                         <h2 class="bold--20">Online Survey About</h2>
                         <h1 class="bold--45">Wholesale Club</h1>
                     </div>
-                    <div class="bounty-card">
+                    <div class="bounty--card mb-5">
                         <div class="row">
                             <div class="col-md-7">
                                 <p class="bold--20">Congratulations!</p>
@@ -34,28 +34,53 @@
                                 </p>
                             </div>
                             <div class="col-md-5">
-                                <div class="circle-wrapper">
-                                    <div class="subpromo-wrapper">
+                                <div class="circle--wrapper">
+                                    <div class="subPromo d-flex align-items-center justify-content-center">
                                         <span class="bold--30">$100</span>
                                         <span class="bold--18">Reward!</span>
                                     </div>
-                                    <div class="promo-wrapper">
-                                        <div class="reward-big-circle">
-                                            <img src="./img/product.png">
+                                    <div class="promo d-flex align-items-center justify-content-center">
+                                        <div class="promo--circle">
+                                            <img class="img-fluid" src="./img/product.png" alt="promo">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="start d-flex align-items-center justify-content-center pt-3">
+                        <div class="start--btn">
+                            <button id="surveyBtn" class="gradient-box d-flex align-items-center justify-content-center" onclick="startSurvey();">
+                                <span class="black--23">START SURVEY NOW</span>
+                                <img class="ml-3" src="./img/arrow.svg" alt="arrow">
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#FFB857" fill-opacity="1" d="M0,256L60,256C120,256,240,256,360,240C480,224,600,192,720,192C840,192,960,224,1080,213.3C1200,203,1320,149,1380,122.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-                  </svg> -->
+            </div>
+            <div class="expired py-3 text-center">
+                <p class="bold--30 d-flex align-items-center justify-content-center">
+                    <img class="mr-2" src="./img/timer.svg" alt="timer">
+                    <span>This limited one-time offer expires in
+                        <span class="timer px-2">5:00</span>
+                    </span>
+                </p>
             </div>
         </section>
     </main>
+    <!--fixed timer with expire time-->
+    <footer class="footer">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="conditions">
+                    <p class="reg--12">2021 All Rights Reserved | <u class="bold--12"> Terms and Conditions</u></p>
+                    <p class="reg--12">
+                        THIS IS AN INDEPENDENT SURVEY. This website is not affiliated with or endorsed by and does not claim to represent or own any of the trademarks, trade names or rights associated with any of the products which are the property of their respective owners who do not own, endorse, or promote this website. *Trial products offered on the last page require shipping and handling fees. See manufacturer's site for details as terms vary with offers. See important terms and conditions regarding this survey, site and advertisement privacy policy here. Important: Shipping costs may apply. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
     
     <script text="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
     <script text="text/javascript" src="./js/bootstrap.min.js"></script>

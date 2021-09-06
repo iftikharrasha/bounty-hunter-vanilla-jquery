@@ -21,3 +21,10 @@ window.onload = function () {
   
     $('.date--today').text(`${months[month]} ${day},${year}`);
 };
+
+function startSurvey() {
+    //screen #1
+    $('.header').hide();
+    $('.hero').hide();
+    $('.footer').hide();
+}
