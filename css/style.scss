@@ -9,10 +9,24 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
-    @media (max-width: 576px) {
-        html {
-          font-size: 12px;
-        }
+    @media (max-width: 575.98px) {
+        font-size: 12px;
+    }
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        font-size: 12px;
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        font-size: 12px;
+    }
+    
+    @media (min-width: 992px) and (max-width: 1299.98px) {
+        font-size: 13px;
+    }
+    @media (min-width: 1300px) and (max-width: 1531.98px){
+        font-size: 13px;
+    }
+    @media (min-width: 2500px) {
+        font-size: 20px;
     }
 }
 
@@ -62,6 +76,15 @@ a, select , input , textarea , button{
 /* font sizing groups */
 .reg--12 {
     font-size: 0.75rem;
+    @media (max-width: 575.98px) {
+        font-size: 1rem;
+    }
+    @media (min-width: 576px) and (max-width: 991.98px) {
+        font-size: 1rem;
+    }
+    @media (min-width: 1300px) and (max-width: 1531.98px){
+        font-size: 1rem;
+    }
 }
 
 .reg--20 {
@@ -71,6 +94,15 @@ a, select , input , textarea , button{
 .bold--12 {
     font-size: 0.75rem;
     font-weight: 700;
+    @media (max-width: 575.98px) {
+        font-size: 1.3rem;
+    }
+    @media (min-width: 576px) and (max-width: 991.98px) {
+        font-size: 1rem;
+    }
+    @media (min-width: 1300px) and (max-width: 1531.98px){
+        font-size: 1rem;
+    }
 }
 
 .bold--16 {
@@ -119,7 +151,20 @@ a, select , input , textarea , button{
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        @media (max-width: 767.98px) {
+            min-height: 60rem;
+        }
+        @media (max-width: 575.98px) {
+            background-image: url(../img/hero-bg-xs.webp);
+            min-height: 65rem;
+        }
+        @media (min-width: 2500px) {
+            min-height: 47rem;
+        }
         .survey-text{
+            @media (max-width: 575.98px) {
+                padding: 5rem 0 !important;
+            }
             h1{
                 color: $accent;
             }
@@ -134,12 +179,33 @@ a, select , input , textarea , button{
                     height: 0.1875rem;
                     top: 50%;
                     background: $black;
+                    @media (max-width: 575.98px) {
+                        width: 8rem;
+                    }
+                    @media (max-width: 320px) {
+                        width: 5rem;
+                    }
+                    @media (min-width: 321px) and (max-width: 376px) {
+                        width: 7rem;
+                    }
                 }
                 &:before {
                     left: 5rem;
+                    @media (max-width: 376px) {
+                        left: 0rem;
+                    }
+                    @media (min-width: 375.98px) and (max-width: 575.98px) {
+                        left: 1rem;
+                    }
                 }
                 &:after {
                     right: 5rem;
+                    @media (max-width: 376px) {
+                        right: 0rem;
+                    }
+                    @media (min-width: 375.98px) and (max-width: 575.98px) {
+                        right: 1rem;
+                    }
                 }
             }
         }
@@ -153,9 +219,43 @@ a, select , input , textarea , button{
             margin: 0 auto;
             padding: 2.5rem 2rem;
             border-radius: 0.75rem;
-            box-shadow: 0rem 0rem 1rem;
+            box-shadow: 1px 1px 14px -1px rgba(0,0,0,0.50);
+            @media (max-width: 767.98px) {
+                background-image: url(../img/pattern-xs.png);
+                width: 100%;
+                min-height: 32rem;
+            }
+            @media (min-width: 768px) and (max-width: 991.98px) {
+                width: 100%;
+            }
+            @media (min-width: 1300px) and (max-width: 1531.98px){
+                width: 65%;
+            }
+            @media (min-width: 1532px) and (max-width: 2499.99px) {
+                width: 80%;
+            }
+            @media (min-width: 2500px) {
+                width: 100%;
+            }
+            @media (max-width: 320px) {
+                min-height: 36rem;
+            }
+            @media (min-width: 321px) and (max-width: 376px) {
+                min-height: 34rem;
+            }
             .circle--wrapper{
                 position: relative;
+                @media (max-width: 575.98px) {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 4rem;
+                }
+                
+                @media (min-width: 576px) and (max-width: 767.98px) {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 4rem;
+                }
                 .subPromo {
                     position: absolute;
                     background-color: $accent;
@@ -167,6 +267,16 @@ a, select , input , textarea , button{
                     line-height: 1;
                     top: -1.25rem;
                     right: 2.5rem;
+                    @media (min-width: 576px) and (max-width: 767.98px) {
+                        right: 6.5rem;
+                    }
+                    @media (max-width: 320px) {
+                        top: -4.5rem;
+                        right: -0.5rem;
+                    }
+                    @media (min-width: 321px) and (max-width: 376px) {
+                        right: .2rem;
+                    }
                 }
                 .promo {
                     position: absolute;
@@ -251,11 +361,28 @@ a, select , input , textarea , button{
         z-index: 999;
         bottom: 0;
         width: 100%;
+        @media (max-width: 575.98px) {
+            bottom: 20px;
+        }
         p{
-          .timer{
-              background-color: $red;
-              border-radius: 1rem;
-          }
+            @media (max-width: 575.98px) {
+                font-size: 1.3rem;
+            }
+            @media (max-width: 320px) {
+                font-size: 1.1rem;
+            }
+            .timer{
+                background-color: $red;
+                border-radius: 1rem;
+            }
+            img{
+                @media (max-width: 575.98px) {
+                    width: 1.3rem;
+                }
+                @media (max-width: 320px) {
+                    width: 1rem;
+                }
+            }
         }
     }
 }
@@ -267,5 +394,24 @@ a, select , input , textarea , button{
         width: 80%;
         margin: 0 auto;
         color: $chocolate;
+        @media (max-width: 991.98px) {
+            width: 100%;
+        }
+        @media (min-width: 1300px) and (max-width: 1531.98px){
+            width: 65%;
+        }
+        @media (min-width: 2500px) {
+            width: 100%;
+        }
+        p{
+            u{
+                @media (max-width: 575.98px) {
+                    font-size: 1rem;
+                }
+                @media (min-width: 1300px) and (max-width: 1531.98px){
+                    font-size: 1rem;
+                }
+            }
+        }
     }
 }

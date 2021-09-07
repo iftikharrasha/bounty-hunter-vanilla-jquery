@@ -24,9 +24,39 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (max-width: 576px) {
-  html html {
+@media (max-width: 575.98px) {
+  html {
     font-size: 12px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1299.98px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1531.98px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 2500px) {
+  html {
+    font-size: 20px;
   }
 }
 
@@ -81,6 +111,24 @@ a, select, input, textarea, button {
   font-size: 0.75rem;
 }
 
+@media (max-width: 575.98px) {
+  .reg--12 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .reg--12 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1531.98px) {
+  .reg--12 {
+    font-size: 1rem;
+  }
+}
+
 .reg--20 {
   font-size: 1.25rem;
 }
@@ -88,6 +136,24 @@ a, select, input, textarea, button {
 .bold--12 {
   font-size: 0.75rem;
   font-weight: 700;
+}
+
+@media (max-width: 575.98px) {
+  .bold--12 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .bold--12 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1531.98px) {
+  .bold--12 {
+    font-size: 1rem;
+  }
 }
 
 .bold--16 {
@@ -136,6 +202,31 @@ a, select, input, textarea, button {
   background-size: cover;
 }
 
+@media (max-width: 767.98px) {
+  .hero .hero--banner {
+    min-height: 60rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero .hero--banner {
+    background-image: url(../img/hero-bg-xs.webp);
+    min-height: 65rem;
+  }
+}
+
+@media (min-width: 2500px) {
+  .hero .hero--banner {
+    min-height: 47rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero .hero--banner .survey-text {
+    padding: 5rem 0 !important;
+  }
+}
+
 .hero .hero--banner .survey-text h1 {
   color: var(--accent);
 }
@@ -155,12 +246,54 @@ a, select, input, textarea, button {
   background: var(--black);
 }
 
+@media (max-width: 575.98px) {
+  .hero .hero--banner .survey-text h2:before, .hero .hero--banner .survey-text h2:after {
+    width: 8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero .hero--banner .survey-text h2:before, .hero .hero--banner .survey-text h2:after {
+    width: 5rem;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 376px) {
+  .hero .hero--banner .survey-text h2:before, .hero .hero--banner .survey-text h2:after {
+    width: 7rem;
+  }
+}
+
 .hero .hero--banner .survey-text h2:before {
   left: 5rem;
 }
 
+@media (max-width: 376px) {
+  .hero .hero--banner .survey-text h2:before {
+    left: 0rem;
+  }
+}
+
+@media (min-width: 375.98px) and (max-width: 575.98px) {
+  .hero .hero--banner .survey-text h2:before {
+    left: 1rem;
+  }
+}
+
 .hero .hero--banner .survey-text h2:after {
   right: 5rem;
+}
+
+@media (max-width: 376px) {
+  .hero .hero--banner .survey-text h2:after {
+    right: 0rem;
+  }
+}
+
+@media (min-width: 375.98px) and (max-width: 575.98px) {
+  .hero .hero--banner .survey-text h2:after {
+    right: 1rem;
+  }
 }
 
 .hero .hero--banner .bounty--card {
@@ -172,12 +305,80 @@ a, select, input, textarea, button {
   margin: 0 auto;
   padding: 2.5rem 2rem;
   border-radius: 0.75rem;
-  -webkit-box-shadow: 0rem 0rem 1rem;
-          box-shadow: 0rem 0rem 1rem;
+  -webkit-box-shadow: 1px 1px 14px -1px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 14px -1px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 767.98px) {
+  .hero .hero--banner .bounty--card {
+    background-image: url(../img/pattern-xs.png);
+    width: 100%;
+    min-height: 32rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero .hero--banner .bounty--card {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1531.98px) {
+  .hero .hero--banner .bounty--card {
+    width: 65%;
+  }
+}
+
+@media (min-width: 1532px) and (max-width: 2499.99px) {
+  .hero .hero--banner .bounty--card {
+    width: 80%;
+  }
+}
+
+@media (min-width: 2500px) {
+  .hero .hero--banner .bounty--card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero .hero--banner .bounty--card {
+    min-height: 36rem;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 376px) {
+  .hero .hero--banner .bounty--card {
+    min-height: 34rem;
+  }
 }
 
 .hero .hero--banner .bounty--card .circle--wrapper {
   position: relative;
+}
+
+@media (max-width: 575.98px) {
+  .hero .hero--banner .bounty--card .circle--wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 4rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero .hero--banner .bounty--card .circle--wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 4rem;
+  }
 }
 
 .hero .hero--banner .bounty--card .circle--wrapper .subPromo {
@@ -194,6 +395,25 @@ a, select, input, textarea, button {
   line-height: 1;
   top: -1.25rem;
   right: 2.5rem;
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero .hero--banner .bounty--card .circle--wrapper .subPromo {
+    right: 6.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero .hero--banner .bounty--card .circle--wrapper .subPromo {
+    top: -4.5rem;
+    right: -0.5rem;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 376px) {
+  .hero .hero--banner .bounty--card .circle--wrapper .subPromo {
+    right: .2rem;
+  }
 }
 
 .hero .hero--banner .bounty--card .circle--wrapper .promo {
@@ -315,9 +535,39 @@ a, select, input, textarea, button {
   width: 100%;
 }
 
+@media (max-width: 575.98px) {
+  .hero .expired {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero .expired p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero .expired p {
+    font-size: 1.1rem;
+  }
+}
+
 .hero .expired p .timer {
   background-color: var(--red);
   border-radius: 1rem;
+}
+
+@media (max-width: 575.98px) {
+  .hero .expired p img {
+    width: 1.3rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero .expired p img {
+    width: 1rem;
+  }
 }
 
 /* footer starts */
@@ -329,5 +579,35 @@ a, select, input, textarea, button {
   width: 80%;
   margin: 0 auto;
   color: var(--chocolate);
+}
+
+@media (max-width: 991.98px) {
+  .footer .conditions {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1531.98px) {
+  .footer .conditions {
+    width: 65%;
+  }
+}
+
+@media (min-width: 2500px) {
+  .footer .conditions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .footer .conditions p u {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1531.98px) {
+  .footer .conditions p u {
+    font-size: 1rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
