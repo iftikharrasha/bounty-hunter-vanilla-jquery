@@ -73,30 +73,79 @@
             <div class="container">
                 <div class="survey--card">
                     <div class="survey--inner">
-                        <div class="progress--bar" id="progress">
+                        <div class="progress--bar" id="progressBar">
                             <div class="percent--detail mb-3">
                                 <h4 class="bold--20">
-                                    <span class="pb-percent">0</span>% Complete 
-                                    <span class="pb-cheers">- Let's get started!</span>
+                                    <span id="percentCount">0</span>% Complete 
+                                    <span id="shoutOuts"></span>
                                 </h4>
                             </div>
                             <div class="progress--detail">
-                                <div class="progress progressLine"></div>
+                                <div class="progress" id="progressLine"></div>
                             </div>
                         </div>
-                        <div class="question py-5">
+                        <div class="question py-5" id="question">
                             <h4 class="bold--20 text-center">
                                 Question <span>0</span> out of <span>2</span>:
                             </h4>
-                            <h2 class="text-center px-sm-5 py-4 bold--22" id="questionText">Do you have a club membership to any wholesale stores such as Costco, Sam's Club, or Smart and Final?</h2>
+                            <h2 class="text-center px-sm-5 py-4 bold--22" id="questionText"></h2>
                         </div>
-                        <div class="choices">
+                        <div class="choices" id="choices">
                             <div id="questionBody" style="display:none;"></div>
+                        </div>
+                        <div class="validate mt-5" id="validate" style="display:none;">
+                            <table width="70%" style="margin: 0 auto;">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p class="fade--opacity bold--20" id="v1b">
+                                                <span class="mr-3"><img src="./img/check-circle.svg" alt="Submitting"></span> Submitting answers...
+                                            </p>
+                                            <p class="fade--opacity my-3 bold--20" id="v2b">
+                                                <span class="mr-3"><img src="./img/check-circle.svg" alt="IP"></span> Checking for duplicate IP addresses...
+                                            </p>
+                                            <p class="fade--opacity bold--20" id="v3b">
+                                                <span class="mr-3"><img src="./img/check-circle.svg" alt="Inventory"></span> Checking our inventory for products...
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!--screen #3-->
+        <!-- <section class="offers" id="offers">
+            <div class="container">
+                <div class="bounty--card mb-5">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p class="bold--20">Congratulations!</p>
+                            <p class="reg--20">Complete this short survey about X and as a thank you, you will <span class="bold--20">unlock access</span> to offers up to <span class="bold--20">$100 cash value</span>!
+                                <br><br>
+                                Act Fast! Today: <span class="bold--20 date--today"></span> is the last day before this special offer expires for the year.
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="circle--wrapper">
+                                <div class="subPromo d-flex align-items-center justify-content-center">
+                                    <span class="bold--30">$100</span>
+                                    <span class="bold--18">Reward!</span>
+                                </div>
+                                <div class="promo d-flex align-items-center justify-content-center">
+                                    <div class="promo--circle">
+                                        <img class="img-fluid" src="./img/product.png" alt="promo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
     </main>
     <!--fixed timer with expire time-->
     <footer class="footer" id="footer">
@@ -115,26 +164,5 @@
     <script text="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
     <script text="text/javascript" src="./js/bootstrap.min.js"></script>
     <script src="./js/script.js"></script>
-    <script>
-        var answered = 0;
-        var prevProgress = 0;
-        var stepsTotal = 0;
-        var progress = 0;
-        var txt = '';
-
-        function cheers(prog = '100') {
-            if (prog == 0) {
-                txt = " - Let's begin!"
-            }
-            if (prog > 0 && prog <= 50) {
-                txt = "- Almost there!"
-            }
-            if (prog > 50 && prog <= 100) {
-                txt = "- Complete"
-            }
-
-            $(".pb-cheers").text(txt);
-        }
-    </script>
 </body>
 </html>

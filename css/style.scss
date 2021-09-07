@@ -143,21 +143,18 @@ a, select , input , textarea , button{
 
 /* button settings */
 .start--btn {
-    background: linear-gradient(-45deg, $primary 0%, $secondary 100%);
+    // background: linear-gradient(-45deg, $primary 0%, $secondary 100%);
+    background: $accent;
     color: $white;
     border-radius: 3.5rem;
     border: 0.5rem solid transparent;
     transition: all .1s ease-in-out;
     padding: 1rem 2.5rem;
-    // border: 7px solid;
-    // border-image-slice: 1;
-    // border-width: 7px;
-    // border-image-source: linear-gradient(to left, #00C853, #B2FF59);
     img{
         transition: all .3s ease-in-out;
     }
     &:hover{
-        border: 0.5rem solid $accent;
+        border: 0.5rem solid $primary;
         img{
             transform: translateX(1rem);
         }
@@ -194,7 +191,7 @@ a, select , input , textarea , button{
 
 /* hero starts */
 .hero{
-    animation: fadeIn .2s;
+    animation: fadeIn .1s;
     .hero--banner{
         background-image: url(../img/hero-bg.webp);
         width: 100%;
@@ -420,12 +417,15 @@ a, select , input , textarea , button{
 /* question starts */
 .survey{
     display: none;
+    animation: fadeIn .5s;
     .survey--card{
         background-color: $white;
         width: 100%;
         padding: 2.5rem 2rem;
         border-radius: 7rem;
         margin-top: 7rem;
+        box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.50);
+        min-height: 40rem;
         @media (max-width: 575.98px) {
             border-radius: 4rem;
         }
@@ -445,7 +445,7 @@ a, select , input , textarea , button{
                     overflow: hidden;
                     height: .8rem;
                     border-radius: 1rem;
-                    .progressLine {
+                    .progress {
                         background: $primary;
                         width: 0;
                         height: inherit;
@@ -454,6 +454,10 @@ a, select , input , textarea , button{
                         transition: 1s ease all;
                     }
                 }
+            }
+            .transit--down{
+                padding-top: 7rem;
+                transition: all .8s ease-in-out;
             }
             .question {
                 @media (max-width: 575.98px) {
@@ -465,8 +469,24 @@ a, select , input , textarea , button{
                     }
                 }
             }
+            .validate{
+                animation: fadeIn .3s;
+                .fade--opacity{
+                    opacity: .5;
+                }
+                .fade--gone{
+                    font-weight: 700;
+                    opacity: 1;
+                }
+            }
         }
     }
+}
+
+/* offers starts */
+.offers{
+    animation: fadeIn .5s;
+    display: none;
 }
 
 /* footer starts */

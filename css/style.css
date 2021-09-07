@@ -193,7 +193,7 @@ a, select, input, textarea, button {
 
 /* button settings */
 .start--btn {
-  background: linear-gradient(-45deg, var(--primary) 0%, var(--secondary) 100%);
+  background: var(--accent);
   color: var(--white);
   border-radius: 3.5rem;
   border: 0.5rem solid transparent;
@@ -208,7 +208,7 @@ a, select, input, textarea, button {
 }
 
 .start--btn:hover {
-  border: 0.5rem solid var(--accent);
+  border: 0.5rem solid var(--primary);
 }
 
 .start--btn:hover img {
@@ -250,8 +250,8 @@ a, select, input, textarea, button {
 
 /* hero starts */
 .hero {
-  -webkit-animation: fadeIn .2s;
-          animation: fadeIn .2s;
+  -webkit-animation: fadeIn .1s;
+          animation: fadeIn .1s;
 }
 
 .hero .hero--banner {
@@ -610,6 +610,8 @@ a, select, input, textarea, button {
 /* question starts */
 .survey {
   display: none;
+  -webkit-animation: fadeIn .5s;
+          animation: fadeIn .5s;
 }
 
 .survey .survey--card {
@@ -618,6 +620,9 @@ a, select, input, textarea, button {
   padding: 2.5rem 2rem;
   border-radius: 7rem;
   margin-top: 7rem;
+  -webkit-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  min-height: 40rem;
 }
 
 @media (max-width: 575.98px) {
@@ -651,7 +656,7 @@ a, select, input, textarea, button {
   border-radius: 1rem;
 }
 
-.survey .survey--card .survey--inner .progress--bar .progress--detail .progressLine {
+.survey .survey--card .survey--inner .progress--bar .progress--detail .progress {
   background: var(--primary);
   width: 0;
   height: inherit;
@@ -661,6 +666,12 @@ a, select, input, textarea, button {
   transition: 1s ease all;
 }
 
+.survey .survey--card .survey--inner .transit--down {
+  padding-top: 7rem;
+  -webkit-transition: all .8s ease-in-out;
+  transition: all .8s ease-in-out;
+}
+
 @media (max-width: 575.98px) {
   .survey .survey--card .survey--inner .question h4 {
     font-size: 2rem;
@@ -668,6 +679,27 @@ a, select, input, textarea, button {
   .survey .survey--card .survey--inner .question h2 {
     font-size: 1.2rem;
   }
+}
+
+.survey .survey--card .survey--inner .validate {
+  -webkit-animation: fadeIn .3s;
+          animation: fadeIn .3s;
+}
+
+.survey .survey--card .survey--inner .validate .fade--opacity {
+  opacity: .5;
+}
+
+.survey .survey--card .survey--inner .validate .fade--gone {
+  font-weight: 700;
+  opacity: 1;
+}
+
+/* offers starts */
+.offers {
+  -webkit-animation: fadeIn .5s;
+          animation: fadeIn .5s;
+  display: none;
 }
 
 /* footer starts */
