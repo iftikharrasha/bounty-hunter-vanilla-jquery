@@ -171,6 +171,11 @@ a, select, input, textarea, button {
   font-weight: 700;
 }
 
+.bold--22 {
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
 .bold--30 {
   font-size: 1.875rem;
   font-weight: 700;
@@ -186,13 +191,69 @@ a, select, input, textarea, button {
   font-weight: 900;
 }
 
+/* button settings */
+.start--btn {
+  background: linear-gradient(-45deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--white);
+  border-radius: 3.5rem;
+  border: 0.5rem solid transparent;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+  padding: 1rem 2.5rem;
+}
+
+.start--btn img {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.start--btn:hover {
+  border: 0.5rem solid var(--accent);
+}
+
+.start--btn:hover img {
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
+}
+
+.question--btn {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  padding: 1.2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 50rem;
+  color: #fff;
+  background-color: var(--accent);
+  border-color: transparent;
+}
+
+@media (max-width: 575.98px) {
+  .question--btn {
+    width: 90%;
+    font-size: 1.5rem;
+  }
+}
+
+.question--btn:hover {
+  background-color: var(--secondary);
+}
+
 /* header starts */
 .header {
   background-color: var(--accent);
   padding: 1rem 1.25rem;
+  -webkit-animation: fadeIn .5s;
+          animation: fadeIn .5s;
 }
 
 /* hero starts */
+.hero {
+  -webkit-animation: fadeIn .2s;
+          animation: fadeIn .2s;
+}
+
 .hero .hero--banner {
   background-image: url(../img/hero-bg.webp);
   width: 100%;
@@ -222,22 +283,22 @@ a, select, input, textarea, button {
 }
 
 @media (max-width: 575.98px) {
-  .hero .hero--banner .survey-text {
+  .hero .hero--banner .hero--title {
     padding: 5rem 0 !important;
   }
 }
 
-.hero .hero--banner .survey-text h1 {
+.hero .hero--banner .hero--title h1 {
   color: var(--accent);
 }
 
-.hero .hero--banner .survey-text h2 {
+.hero .hero--banner .hero--title h2 {
   position: relative;
   margin: 0 auto;
   max-width: 37.5rem;
 }
 
-.hero .hero--banner .survey-text h2:before, .hero .hero--banner .survey-text h2:after {
+.hero .hero--banner .hero--title h2:before, .hero .hero--banner .hero--title h2:after {
   position: absolute;
   content: "";
   width: 6.25rem;
@@ -247,51 +308,51 @@ a, select, input, textarea, button {
 }
 
 @media (max-width: 575.98px) {
-  .hero .hero--banner .survey-text h2:before, .hero .hero--banner .survey-text h2:after {
+  .hero .hero--banner .hero--title h2:before, .hero .hero--banner .hero--title h2:after {
     width: 8rem;
   }
 }
 
 @media (max-width: 320px) {
-  .hero .hero--banner .survey-text h2:before, .hero .hero--banner .survey-text h2:after {
+  .hero .hero--banner .hero--title h2:before, .hero .hero--banner .hero--title h2:after {
     width: 5rem;
   }
 }
 
 @media (min-width: 321px) and (max-width: 376px) {
-  .hero .hero--banner .survey-text h2:before, .hero .hero--banner .survey-text h2:after {
+  .hero .hero--banner .hero--title h2:before, .hero .hero--banner .hero--title h2:after {
     width: 7rem;
   }
 }
 
-.hero .hero--banner .survey-text h2:before {
+.hero .hero--banner .hero--title h2:before {
   left: 5rem;
 }
 
 @media (max-width: 376px) {
-  .hero .hero--banner .survey-text h2:before {
+  .hero .hero--banner .hero--title h2:before {
     left: 0rem;
   }
 }
 
 @media (min-width: 375.98px) and (max-width: 575.98px) {
-  .hero .hero--banner .survey-text h2:before {
+  .hero .hero--banner .hero--title h2:before {
     left: 1rem;
   }
 }
 
-.hero .hero--banner .survey-text h2:after {
+.hero .hero--banner .hero--title h2:after {
   right: 5rem;
 }
 
 @media (max-width: 376px) {
-  .hero .hero--banner .survey-text h2:after {
+  .hero .hero--banner .hero--title h2:after {
     right: 0rem;
   }
 }
 
 @media (min-width: 375.98px) and (max-width: 575.98px) {
-  .hero .hero--banner .survey-text h2:after {
+  .hero .hero--banner .hero--title h2:after {
     right: 1rem;
   }
 }
@@ -461,11 +522,11 @@ a, select, input, textarea, button {
   }
 }
 
-.hero .hero--banner .start .start--btn {
+.hero .hero--banner .start .start--div {
   position: relative;
 }
 
-.hero .hero--banner .start .start--btn :before {
+.hero .hero--banner .start .start--div :before {
   content: '';
   display: block;
   position: absolute;
@@ -500,30 +561,6 @@ a, select, input, textarea, button {
   100% {
     background-position: 62rem 0%;
   }
-}
-
-.hero .hero--banner .start .start--btn button {
-  background: linear-gradient(-45deg, var(--primary) 0%, var(--secondary) 100%);
-  color: var(--white);
-  border-radius: 3.5rem;
-  border: 0.5rem solid transparent;
-  -webkit-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-  padding: 1rem 2.5rem;
-}
-
-.hero .hero--banner .start .start--btn button img {
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-}
-
-.hero .hero--banner .start .start--btn button:hover {
-  border: 0.5rem solid var(--accent);
-}
-
-.hero .hero--banner .start .start--btn button:hover img {
-  -webkit-transform: translateX(1rem);
-          transform: translateX(1rem);
 }
 
 .hero .expired {
@@ -570,8 +607,73 @@ a, select, input, textarea, button {
   }
 }
 
+/* question starts */
+.survey {
+  display: none;
+}
+
+.survey .survey--card {
+  background-color: var(--white);
+  width: 100%;
+  padding: 2.5rem 2rem;
+  border-radius: 7rem;
+  margin-top: 7rem;
+}
+
+@media (max-width: 575.98px) {
+  .survey .survey--card {
+    border-radius: 4rem;
+  }
+}
+
+.survey .survey--card .survey--inner {
+  width: 65%;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+@media (max-width: 575.98px) {
+  .survey .survey--card .survey--inner {
+    width: 90%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .survey .survey--card .survey--inner {
+    width: 90%;
+  }
+}
+
+.survey .survey--card .survey--inner .progress--bar .progress--detail {
+  background: #EBEBEB;
+  overflow: hidden;
+  height: .8rem;
+  border-radius: 1rem;
+}
+
+.survey .survey--card .survey--inner .progress--bar .progress--detail .progressLine {
+  background: var(--primary);
+  width: 0;
+  height: inherit;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+@media (max-width: 575.98px) {
+  .survey .survey--card .survey--inner .question h4 {
+    font-size: 2rem;
+  }
+  .survey .survey--card .survey--inner .question h2 {
+    font-size: 1.2rem;
+  }
+}
+
 /* footer starts */
 .footer {
+  -webkit-animation: fadeIn .5s;
+          animation: fadeIn .5s;
   padding: 7rem 0;
 }
 
@@ -608,6 +710,24 @@ a, select, input, textarea, button {
 @media (min-width: 1300px) and (max-width: 1531.98px) {
   .footer .conditions p u {
     font-size: 1rem;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=style.css.map */

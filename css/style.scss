@@ -120,6 +120,12 @@ a, select , input , textarea , button{
   font-weight: 700;
 }
 
+.bold--22 {
+    font-size: 1.375rem;
+    font-weight: 700;
+  }
+  
+
 .bold--30 {
     font-size: 1.875rem;
     font-weight: 700;
@@ -135,15 +141,60 @@ a, select , input , textarea , button{
     font-weight: 900;
 }
 
+/* button settings */
+.start--btn {
+    background: linear-gradient(-45deg, $primary 0%, $secondary 100%);
+    color: $white;
+    border-radius: 3.5rem;
+    border: 0.5rem solid transparent;
+    transition: all .1s ease-in-out;
+    padding: 1rem 2.5rem;
+    // border: 7px solid;
+    // border-image-slice: 1;
+    // border-width: 7px;
+    // border-image-source: linear-gradient(to left, #00C853, #B2FF59);
+    img{
+        transition: all .3s ease-in-out;
+    }
+    &:hover{
+        border: 0.5rem solid $accent;
+        img{
+            transform: translateX(1rem);
+        }
+    }
+}
+
+.question--btn {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1.2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-radius: 50rem;
+    color: #fff;
+    background-color: var(--accent);
+    border-color: transparent;
+    @media (max-width: 575.98px) {
+        width: 90%;
+        font-size: 1.5rem;
+    }
+    &:hover{
+        background-color: var(--secondary);
+    }
+}
+
 
 /* header starts */
 .header{
     background-color: $accent;
     padding: 1rem 1.25rem;
+    animation: fadeIn .5s;
 }
 
 /* hero starts */
 .hero{
+    animation: fadeIn .2s;
     .hero--banner{
         background-image: url(../img/hero-bg.webp);
         width: 100%;
@@ -161,7 +212,7 @@ a, select , input , textarea , button{
         @media (min-width: 2500px) {
             min-height: 47rem;
         }
-        .survey-text{
+        .hero--title{
             @media (max-width: 575.98px) {
                 padding: 5rem 0 !important;
             }
@@ -304,7 +355,7 @@ a, select , input , textarea , button{
             }
         }
         .start{
-            .start--btn{
+            .start--div{
                 position: relative;
                 :before{
                     content:'';
@@ -329,27 +380,6 @@ a, select , input , textarea , button{
                       background-position: 62rem 0%;
                     }
                   }
-                button{
-                    background: linear-gradient(-45deg, $primary 0%, $secondary 100%);
-                    color: $white;
-                    border-radius: 3.5rem;
-                    border: 0.5rem solid transparent;
-                    transition: all .1s ease-in-out;
-                    padding: 1rem 2.5rem;
-                    // border: 7px solid;
-                    // border-image-slice: 1;
-                    // border-width: 7px;
-                    // border-image-source: linear-gradient(to left, #00C853, #B2FF59);
-                    img{
-                        transition: all .3s ease-in-out;
-                    }
-                    &:hover{
-                        border: 0.5rem solid $accent;
-                        img{
-                            transform: translateX(1rem);
-                        }
-                    }
-                }
             }
         }
     }
@@ -387,8 +417,61 @@ a, select , input , textarea , button{
     }
 }
 
+/* question starts */
+.survey{
+    display: none;
+    .survey--card{
+        background-color: $white;
+        width: 100%;
+        padding: 2.5rem 2rem;
+        border-radius: 7rem;
+        margin-top: 7rem;
+        @media (max-width: 575.98px) {
+            border-radius: 4rem;
+        }
+        .survey--inner{
+            width: 65%;
+            margin: 0 auto;
+            padding: 3rem 0;
+            @media (max-width: 575.98px) {
+                width: 90%;
+            }
+            @media (min-width: 576px) and (max-width: 991.98px) {
+                width: 90%;
+            }
+            .progress--bar{
+                .progress--detail{
+                    background: #EBEBEB;
+                    overflow: hidden;
+                    height: .8rem;
+                    border-radius: 1rem;
+                    .progressLine {
+                        background: $primary;
+                        width: 0;
+                        height: inherit;
+                        border-top-right-radius: 1rem;
+                        border-bottom-right-radius: 1rem;
+                        transition: 1s ease all;
+                    }
+                }
+            }
+            .question {
+                @media (max-width: 575.98px) {
+                    h4{
+                        font-size: 2rem;
+                    }
+                    h2{
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
 /* footer starts */
 .footer{
+    animation: fadeIn .5s;
     padding: 7rem 0;
     .conditions{
         width: 80%;
@@ -413,5 +496,14 @@ a, select , input , textarea , button{
                 }
             }
         }
+    }
+}
+
+@keyframes fadeIn{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

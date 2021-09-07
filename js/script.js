@@ -49,7 +49,8 @@ function startExpire(duration, display) {
 
 function startSurvey() {
     //screen #1
-    $('.header').hide();
-    $('.hero').hide();
-    $('.footer').hide();
+    $('#header').hide();
+    $('#hero').hide();
+
+    $('#survey').show();
 }

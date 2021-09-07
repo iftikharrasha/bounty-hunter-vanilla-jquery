@@ -12,15 +12,15 @@
 </head>
 <body>
     <!--top text for bounties-->
-    <header class="header text-center">
+    <header class="header text-center" id="header">
         <h6 class="bold--16 text-white">Over $3,200,000 in Offer Rewards claimed so far!</h6>
     </header>
     <main>
         <!--screen #1-->
-        <section class="hero">
+        <section class="hero" id="hero">
             <div class="hero--banner">
                 <div class="container">
-                    <div class="survey-text text-center py-5">
+                    <div class="hero--title text-center py-5">
                         <h2 class="bold--20">Online Survey About</h2>
                         <h1 class="bold--45">Wholesale Club</h1>
                     </div>
@@ -49,8 +49,8 @@
                         </div>
                     </div>
                     <div class="start d-flex align-items-center justify-content-center pt-3">
-                        <div class="start--btn">
-                            <button id="surveyBtn" class="gradient-box d-flex align-items-center justify-content-center" onclick="startSurvey();">
+                        <div class="start--div">
+                            <button id="surveyBtn" class="start--btn d-flex align-items-center justify-content-center" onclick="startSurvey();">
                                 <span class="black--23">START SURVEY NOW</span>
                                 <img class="ml-3" src="./img/arrow.svg" alt="arrow">
                             </button>
@@ -67,9 +67,39 @@
                 </p>
             </div>
         </section>
+
+        <!--screen #2-->
+        <section class="survey" id="survey">
+            <div class="container">
+                <div class="survey--card">
+                    <div class="survey--inner">
+                        <div class="progress--bar" id="progress">
+                            <div class="percent--detail mb-3">
+                                <h4 class="bold--20">
+                                    <span class="pb-percent">0</span>% Complete 
+                                    <span class="pb-cheers">- Let's get started!</span>
+                                </h4>
+                            </div>
+                            <div class="progress--detail">
+                                <div class="progress progressLine"></div>
+                            </div>
+                        </div>
+                        <div class="question py-5">
+                            <h4 class="bold--20 text-center">
+                                Question <span>0</span> out of <span>2</span>:
+                            </h4>
+                            <h2 class="text-center px-sm-5 py-4 bold--22" id="questionText">Do you have a club membership to any wholesale stores such as Costco, Sam's Club, or Smart and Final?</h2>
+                        </div>
+                        <div class="choices">
+                            <div id="questionBody" style="display:none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <!--fixed timer with expire time-->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container">
             <div class="col-md-12">
                 <div class="conditions">
@@ -85,5 +115,26 @@
     <script text="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
     <script text="text/javascript" src="./js/bootstrap.min.js"></script>
     <script src="./js/script.js"></script>
+    <script>
+        var answered = 0;
+        var prevProgress = 0;
+        var stepsTotal = 0;
+        var progress = 0;
+        var txt = '';
+
+        function cheers(prog = '100') {
+            if (prog == 0) {
+                txt = " - Let's begin!"
+            }
+            if (prog > 0 && prog <= 50) {
+                txt = "- Almost there!"
+            }
+            if (prog > 50 && prog <= 100) {
+                txt = "- Complete"
+            }
+
+            $(".pb-cheers").text(txt);
+        }
+    </script>
 </body>
 </html>
