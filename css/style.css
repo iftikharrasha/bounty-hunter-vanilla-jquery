@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap");
 :root {
   --white: #FFFFFF;
   --gray: #CFCFCF;
@@ -133,6 +133,11 @@ a, select, input, textarea, button {
   font-size: 1.25rem;
 }
 
+.semi--20 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
 .bold--12 {
   font-size: 0.75rem;
   font-weight: 700;
@@ -218,7 +223,6 @@ a, select, input, textarea, button {
 
 /* card settings */
 .bounty--card {
-  background-image: url(../img/pattern-xl.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -417,6 +421,12 @@ a, select, input, textarea, button {
 @media (max-width: 575.98px) {
   .hero .hero--banner .bounty--card {
     background-image: url(../img/pattern-xs-1.png);
+  }
+}
+
+@media (min-width: 576px) {
+  .hero .hero--banner .bounty--card {
+    background-image: url(../img/pattern-xl-1.png);
   }
 }
 
@@ -758,6 +768,63 @@ a, select, input, textarea, button {
 @media (max-width: 575.98px) {
   .offers .bounty--card {
     background-image: url(../img/pattern-xs-2.png);
+  }
+}
+
+@media (min-width: 576px) {
+  .offers .bounty--card {
+    background-image: url(../img/pattern-xl-2.png);
+  }
+}
+
+.offers .coupon {
+  display: none;
+  color: var(--green);
+  border: 3px dashed var(--green);
+  padding: 0.3rem;
+  width: 25%;
+  margin: 0 auto;
+}
+
+@media (max-width: 575.98px) {
+  .offers .coupon {
+    width: 65%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .offers .coupon {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .offers .coupon {
+    width: 35%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1299.98px) {
+  .offers .coupon {
+    width: 30%;
+  }
+}
+
+@media (min-width: 2500px) {
+  .offers .coupon {
+    width: 35%;
+  }
+}
+
+@media (max-width: 320px) {
+  .offers .coupon {
+    width: 80%;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 376px) {
+  .offers .coupon {
+    width: 70%;
   }
 }
 

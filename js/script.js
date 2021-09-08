@@ -226,15 +226,15 @@ function validateScreen() {
   }, 1000);
 
   setTimeout(function () {
-    $('#v1b').addClass('fade--gone');
+    $('#ticked1').addClass('fade--gone');
   }, 2000);
 
   setTimeout(function () {
-    $('#v2b').addClass('fade--gone');
+    $('#ticked2').addClass('fade--gone');
   }, 3000);
 
   setTimeout(function () {
-    $('#v3b').addClass('fade--gone');
+    $('#ticked3').addClass('fade--gone');
   }, 4000);
 
   setTimeout(function () {
@@ -244,6 +244,7 @@ function validateScreen() {
   }, 4500);
 
   setTimeout(function () {
-    //show success message
+    $('#coupon').show();
+    $('#coupon').fadeIn();
   }, 7000);
 }

@@ -91,6 +91,11 @@ a, select , input , textarea , button{
     font-size: 1.25rem;
 }
 
+.semi--20 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
 .bold--12 {
     font-size: 0.75rem;
     font-weight: 700;
@@ -123,9 +128,8 @@ a, select , input , textarea , button{
 .bold--22 {
     font-size: 1.375rem;
     font-weight: 700;
-  }
+}
   
-
 .bold--30 {
     font-size: 1.875rem;
     font-weight: 700;
@@ -163,7 +167,6 @@ a, select , input , textarea , button{
 
 /* card settings */
 .bounty--card{
-    background-image: url(../img/pattern-xl.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -296,6 +299,9 @@ a, select , input , textarea , button{
         .bounty--card{
             @media (max-width: 575.98px) {
                 background-image: url(../img/pattern-xs-1.png);
+            }
+            @media (min-width: 576px) {
+                background-image: url(../img/pattern-xl-1.png);
             }
             .circle--wrapper{
                 position: relative;
@@ -527,6 +533,39 @@ a, select , input , textarea , button{
         min-height: 0;
         @media (max-width: 575.98px) {
             background-image: url(../img/pattern-xs-2.png);
+        }
+        @media (min-width: 576px) {
+            background-image: url(../img/pattern-xl-2.png);
+        }
+    }
+
+    .coupon{
+        display: none;
+        color: $green;
+        border: 3px dashed $green;
+        padding: 0.3rem;
+        width: 25%;
+        margin: 0 auto;
+        @media (max-width: 575.98px) {
+            width: 65%;
+        }
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            width: 50%;
+        }
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            width: 35%;
+        }
+        @media (min-width: 992px) and (max-width: 1299.98px) {
+            width: 30%;
+        }
+        @media (min-width: 2500px) {
+            width: 35%;
+        }
+        @media (max-width: 320px) {
+            width: 80%;
+        }
+        @media (min-width: 321px) and (max-width: 376px) {
+            width: 70%;
         }
     }
 }
