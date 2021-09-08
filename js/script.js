@@ -153,6 +153,8 @@ function startSurvey() {
 
     const question = questions[0];
     const nextQuestion = question.id + 1;
+    const questionCount = questions.id;
+    const questLength = questions.length;
 
     //progress count
     answered = question.surveyStep - 1;
@@ -178,6 +180,8 @@ function startSurvey() {
       $('#questionBody').show();
 
       for (var i = 0; i < question.answers.length; i++) {
+        $('#questionLive').html(question.surveyStep);
+        $('#questionLength').html(question.totalSurveySteps);
         $('#questionBody').append(
             `<button id="` + question.answers[i].id + `"class="mb-4 question--btn" value="` + question.answers[i].value + `"onClick="nextQuestion(` + nextQuestion + `)">` + question.answers[i].answerText + `</button>`
         );
@@ -215,12 +219,14 @@ function nextQuestion(questionId) {
     $('#questionText').append(question.questionText);
 
     for (var i = 0; i < question.answers.length; i++) {
+      $('#questionLive').html(question.surveyStep);
+      $('#questionLength').html(question.totalSurveySteps);
       $('#questionBody').append(
         `<button id="` + question.answers[i].id + `"class="mb-4 question--btn" value="` + question.answers[i].value + `"onClick="nextQuestion(` + nextQuestion + `)">` + question.answers[i].answerText + `</button>`
       );
     }
 
-    //progress still continued
+    //progress continued
     var answered = question.surveyStep - 1;
     var stepsTotal = question.totalSurveySteps;
     var prevProgress = $('#percentCount').text();
