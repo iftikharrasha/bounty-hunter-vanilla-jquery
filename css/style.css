@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&display=swap");
 :root {
   --white: #FFFFFF;
   --gray: #CFCFCF;
@@ -129,6 +129,10 @@ a, select, input, textarea, button {
   }
 }
 
+.reg--14 {
+  font-size: 0.875rem;
+}
+
 .reg--18 {
   font-size: 1.125rem;
 }
@@ -139,18 +143,36 @@ a, select, input, textarea, button {
   }
 }
 
+@media (max-width: 376px) {
+  .reg--18 {
+    font-size: 0.8rem;
+  }
+}
+
 .reg--20 {
   font-size: 1.25rem;
 }
 
-.italic--18 {
+@media (max-width: 376px) {
+  .reg--20 {
+    font-size: 1rem;
+  }
+}
+
+.italic--reg--18 {
   font-size: 1.125rem;
   font-style: italic;
 }
 
 @media (max-width: 575.98px) {
-  .italic--18 {
+  .italic--reg--18 {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .italic--reg--18 {
+    font-size: 0.8rem;
   }
 }
 
@@ -167,6 +189,12 @@ a, select, input, textarea, button {
 @media (max-width: 575.98px) {
   .semi--25 {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .semi--25 {
+    font-size: 0.8rem;
   }
 }
 
@@ -209,6 +237,12 @@ a, select, input, textarea, button {
   }
 }
 
+@media (max-width: 376px) {
+  .bold--18 {
+    font-size: 0.8rem;
+  }
+}
+
 .bold--20 {
   font-size: 1.25rem;
   font-weight: 700;
@@ -227,6 +261,12 @@ a, select, input, textarea, button {
 @media (max-width: 575.98px) {
   .bold--30 {
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .bold--30 {
+    font-size: 1rem;
   }
 }
 
@@ -307,6 +347,13 @@ a, select, input, textarea, button {
     width: 90%;
     padding: .5rem;
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .product--btn {
+    font-size: 0.8rem;
+    padding: .3rem;
   }
 }
 
@@ -825,7 +872,6 @@ a, select, input, textarea, button {
 
 /* offers starts */
 .offers {
-  display: none;
   -webkit-animation: fadeIn .5s;
           animation: fadeIn .5s;
   background-color: var(--white);
@@ -852,7 +898,7 @@ a, select, input, textarea, button {
   color: var(--green);
   border: 3px dashed var(--green);
   padding: 0.3rem;
-  width: 25%;
+  width: 30%;
   margin: 0 auto;
 }
 
@@ -880,6 +926,12 @@ a, select, input, textarea, button {
   }
 }
 
+@media (min-width: 1300px) and (max-width: 1531.98px) {
+  .offers .coupon {
+    width: 25%;
+  }
+}
+
 @media (min-width: 2500px) {
   .offers .coupon {
     width: 35%;
@@ -898,10 +950,6 @@ a, select, input, textarea, button {
   }
 }
 
-.offers .products {
-  display: none;
-}
-
 @media (min-width: 1300px) {
   .offers .products {
     max-width: 82.5rem;
@@ -912,7 +960,7 @@ a, select, input, textarea, button {
   width: 100%;
   -webkit-box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.1);
           box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
 }
 
 .offers .products .product .product--img {
@@ -955,6 +1003,10 @@ a, select, input, textarea, button {
   background-color: var(--red);
 }
 
+.offers .products .grayed--out {
+  border: 0.2rem solid var(--red);
+}
+
 .offers .products .grayed--out .product--img {
   opacity: .3;
 }
@@ -994,6 +1046,10 @@ a, select, input, textarea, button {
   }
 }
 
+.footer .conditions p a {
+  color: var(--chocolate);
+}
+
 @media (max-width: 575.98px) {
   .footer .conditions p u {
     font-size: 1rem;
@@ -1004,6 +1060,156 @@ a, select, input, textarea, button {
   .footer .conditions p u {
     font-size: 1rem;
   }
+}
+
+.footer .terms--dialog {
+  max-width: 70rem;
+}
+
+@media (max-width: 991.98px) {
+  .footer .terms--dialog {
+    max-width: 60rem;
+  }
+}
+
+.footer .terms--dialog .modal-content {
+  border-radius: 7rem;
+}
+
+@media (max-width: 575.98px) {
+  .footer .terms--dialog .modal-content {
+    border-radius: 3rem;
+  }
+}
+
+.footer .terms--dialog .modal-header {
+  border-bottom: none;
+}
+
+.footer .terms--dialog .modal-header .close {
+  font-size: 4.5rem;
+  font-weight: 500;
+  padding: 2rem 6rem;
+  opacity: 1;
+}
+
+@media (max-width: 575.98px) {
+  .footer .terms--dialog .modal-header .close {
+    padding: 2rem 4rem;
+  }
+}
+
+.footer .terms--dialog .terms--body {
+  color: var(--chocolate);
+  padding: 0rem 7rem 3rem 7rem;
+}
+
+@media (max-width: 575.98px) {
+  .footer .terms--dialog .terms--body {
+    padding: 0rem 3rem 3rem 3rem;
+  }
+}
+
+.footer .comment .comment--card {
+  background-color: var(--white);
+  width: 100%;
+  padding: 2.5rem 2rem;
+  border-radius: 7rem;
+  margin: 0 0 3rem 0;
+  -webkit-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 767.98px) {
+  .footer .comment .comment--card {
+    padding: 1.5rem 1rem;
+    border-radius: 4rem;
+  }
+}
+
+.footer .comment .comment--card .comment--item {
+  width: 85%;
+  margin: 0 auto;
+}
+
+@media (max-width: 575.98px) {
+  .footer .comment .comment--card .comment--item {
+    width: 90%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .footer .comment .comment--card .comment--item {
+    width: 95%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1531.98px) {
+  .footer .comment .comment--card .comment--item {
+    width: 70%;
+  }
+}
+
+.footer .comment .comment--card .comment--item .comment--img {
+  width: 15%;
+}
+
+@media (max-width: 767.98px) {
+  .footer .comment .comment--card .comment--item .comment--img {
+    width: 20%;
+  }
+}
+
+.footer .comment .comment--card .comment--item .comment--img img {
+  width: 5.5rem;
+  border-radius: 50%;
+}
+
+@media (max-width: 575.98px) {
+  .footer .comment .comment--card .comment--item .comment--img img {
+    width: 4rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .footer .comment .comment--card .comment--item .comment--img img {
+    width: 3rem;
+  }
+}
+
+.footer .comment .comment--card .comment--item .comment--desc {
+  width: 90%;
+}
+
+@media (max-width: 767.98px) {
+  .footer .comment .comment--card .comment--item .comment--desc {
+    width: 80%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .footer .comment .comment--card .comment--item .comment--desc p {
+    font-size: 1rem;
+  }
+}
+
+.footer .comment .comment--card .comment--item .comment--desc .verified {
+  color: var(--green);
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-style: italic;
+}
+
+@media (max-width: 575.98px) {
+  .footer .comment .comment--card .comment--item .comment--desc .comment--rating span {
+    font-size: 1rem;
+  }
+}
+
+.footer .comment .comment--card .comment--item .comment--desc .comment--rating span i {
+  -webkit-text-fill-color: var(--accent);
+  -webkit-text-stroke-width: 0.03rem;
+  -webkit-text-stroke-color: var(--accent);
 }
 
 @-webkit-keyframes fadeIn {

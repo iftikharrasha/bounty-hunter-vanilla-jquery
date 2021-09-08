@@ -87,22 +87,35 @@ a, select , input , textarea , button{
     }
 }
 
+.reg--14 {
+    font-size: 0.875rem;
+}
+
 .reg--18 {
     font-size: 1.125rem;
     @media (max-width: 575.98px) {
         font-size: 1rem;
     }
+    @media (max-width: 376px) {
+        font-size: 0.8rem;
+    }
 }
 
 .reg--20 {
     font-size: 1.25rem;
+    @media (max-width: 376px) {
+        font-size: 1rem;
+    }
 }
 
-.italic--18 {
+.italic--reg--18 {
     font-size: 1.125rem;
     font-style: italic;
     @media (max-width: 575.98px) {
         font-size: 1rem;
+    }
+    @media (max-width: 376px) {
+        font-size: 0.8rem;
     }
 }
 
@@ -116,6 +129,9 @@ a, select , input , textarea , button{
     font-weight: 600;
     @media (max-width: 575.98px) {
         font-size: 1rem;
+    }
+    @media (max-width: 376px) {
+        font-size: 0.8rem;
     }
 }
 
@@ -144,6 +160,9 @@ a, select , input , textarea , button{
     @media (max-width: 575.98px) {
         font-size: 1rem;
     }
+    @media (max-width: 376px) {
+        font-size: 0.8rem;
+    }
 }
 
 .bold--20 {
@@ -161,6 +180,9 @@ a, select , input , textarea , button{
     font-weight: 700;
     @media (max-width: 575.98px) {
         font-size: 1.25rem;
+    }
+    @media (max-width: 376px) {
+        font-size: 1rem;
     }
 }
 
@@ -229,6 +251,10 @@ a, select , input , textarea , button{
         width: 90%;
         padding: .5rem;
         font-size: 1rem;
+    }
+    @media (max-width: 376px) {
+        font-size: 0.8rem;
+        padding: .3rem;
     }
     &:hover{
         color: $white;
@@ -576,7 +602,7 @@ a, select , input , textarea , button{
 
 /* offers starts */
 .offers{
-    display: none;
+    // display: none;
     animation: fadeIn .5s;
     background-color: $white;
     .bounty--card{
@@ -594,7 +620,7 @@ a, select , input , textarea , button{
         color: $green;
         border: 3px dashed $green;
         padding: 0.3rem;
-        width: 25%;
+        width: 30%;
         margin: 0 auto;
         @media (max-width: 575.98px) {
             width: 65%;
@@ -608,6 +634,9 @@ a, select , input , textarea , button{
         @media (min-width: 992px) and (max-width: 1299.98px) {
             width: 30%;
         }
+        @media (min-width: 1300px) and (max-width: 1531.98px){
+            width: 25%;
+        }
         @media (min-width: 2500px) {
             width: 35%;
         }
@@ -620,14 +649,14 @@ a, select , input , textarea , button{
     }
 
     .products{
-        display: none;
+        // display: none;
         @media (min-width: 1300px){
             max-width: 82.5rem;
         }
         .product{
             width: 100%;
             box-shadow: 0rem 0rem 0.5rem rgba(0,0,0,0.10);
-            border-radius: 0.3rem;
+            border-radius: 0.5rem;
             .product--img{
                 position: relative;
                 width: 50%;
@@ -664,6 +693,7 @@ a, select , input , textarea , button{
             }
         }
         .grayed--out{
+            border: 0.2rem solid $red;
             .product--img{
                 opacity: .3;
             }
@@ -694,12 +724,120 @@ a, select , input , textarea , button{
             width: 100%;
         }
         p{
+            a{
+                color: $chocolate;
+            }
             u{
                 @media (max-width: 575.98px) {
                     font-size: 1rem;
                 }
                 @media (min-width: 1300px) and (max-width: 1531.98px){
                     font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    .terms--dialog{
+        max-width: 70rem;
+        @media (max-width: 991.98px) {
+            max-width: 60rem;
+        }
+        .modal-content{
+            border-radius: 7rem;
+            @media (max-width: 575.98px) {
+                border-radius: 3rem;
+            }
+        }
+        .modal-header {
+            border-bottom: none;
+            .close {
+                font-size: 4.5rem;
+                font-weight: 500;
+                padding: 2rem 6rem;
+                opacity: 1;
+                @media (max-width: 575.98px) {
+                    padding: 2rem 4rem;
+                }
+            }
+        }
+        .terms--body{
+            color: $chocolate;
+            padding: 0rem 7rem 3rem 7rem;
+            @media (max-width: 575.98px) {
+                padding: 0rem 3rem 3rem 3rem
+            }
+        }
+    }
+
+    .comment{
+        .comment--card{
+            background-color: $white;
+            width: 100%;
+            padding: 2.5rem 2rem;
+            border-radius: 7rem;
+            margin: 0 0 3rem 0;
+            box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.50);
+            @media (max-width: 767.98px) {
+                padding: 1.5rem 1rem;
+                border-radius: 4rem;
+            }
+            .comment--item{
+                width: 85%;
+                margin: 0 auto;
+                @media (max-width: 575.98px) {
+                    width: 90%;
+                }
+                @media (min-width: 576px) and (max-width: 991.98px) {
+                    width: 95%;
+                }
+                @media (min-width: 1300px) and (max-width: 1531.98px){
+                    width: 70%;
+                }
+                .comment--img{
+                    width: 15%;
+                    @media (max-width: 767.98px) {
+                        width: 20%;
+                    }
+                    img{
+                        width: 5.5rem;
+                        border-radius: 50%;
+                        @media (max-width: 575.98px) {
+                            width: 4rem;
+                        }
+                        @media (max-width: 320px) {
+                            width: 3rem;
+                        }
+                    }
+                }
+                .comment--desc{
+                    width: 90%;
+                    @media (max-width: 767.98px) {
+                        width: 80%;
+                    }
+                    p{
+                        @media (max-width: 575.98px) {
+                            font-size: 1rem;
+                        }
+                    }
+                    .verified{
+                        color: $green;
+                        font-size: 0.875rem;
+                        font-weight: 700;
+                        font-style: italic;
+                    }
+                    .comment--rating{
+                        span{
+                            @media (max-width: 575.98px) {
+                                font-size: 1rem;
+                            }
+                            i{
+                                -webkit-text-fill-color: $accent;
+                                -webkit-text-stroke-width: 0.03rem;
+                                -webkit-text-stroke-color: $accent;
+                            }
+                        }
+                    }
                 }
             }
         }
