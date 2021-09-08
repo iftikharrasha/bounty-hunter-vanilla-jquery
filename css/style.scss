@@ -87,13 +87,36 @@ a, select , input , textarea , button{
     }
 }
 
+.reg--18 {
+    font-size: 1.125rem;
+    @media (max-width: 575.98px) {
+        font-size: 1rem;
+    }
+}
+
 .reg--20 {
     font-size: 1.25rem;
+}
+
+.italic--18 {
+    font-size: 1.125rem;
+    font-style: italic;
+    @media (max-width: 575.98px) {
+        font-size: 1rem;
+    }
 }
 
 .semi--20 {
     font-size: 1.25rem;
     font-weight: 600;
+}
+
+.semi--25 {
+    font-size: 1.5625rem;
+    font-weight: 600;
+    @media (max-width: 575.98px) {
+        font-size: 1rem;
+    }
 }
 
 .bold--12 {
@@ -118,6 +141,9 @@ a, select , input , textarea , button{
 .bold--18 {
     font-size: 1.125rem;
     font-weight: 700;
+    @media (max-width: 575.98px) {
+        font-size: 1rem;
+    }
 }
 
 .bold--20 {
@@ -133,6 +159,9 @@ a, select , input , textarea , button{
 .bold--30 {
     font-size: 1.875rem;
     font-weight: 700;
+    @media (max-width: 575.98px) {
+        font-size: 1.25rem;
+    }
 }
 
 .bold--45 {
@@ -162,6 +191,48 @@ a, select , input , textarea , button{
         img{
             transform: translateX(1rem);
         }
+    }
+}
+
+.question--btn {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1.2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-radius: 50rem;
+    color: $white;
+    background-color: var(--accent);
+    border-color: transparent;
+    @media (max-width: 575.98px) {
+        width: 90%;
+        font-size: 1.5rem;
+    }
+    &:hover{
+        background-color: var(--secondary);
+    }
+}
+
+.product--btn {
+    display: block;
+    text-align: center;
+    width: 70%;
+    padding: .8rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-radius: .8rem;
+    color: $white;
+    background-color: var(--accent);
+    border-color: transparent;
+    @media (max-width: 575.98px) {
+        width: 90%;
+        padding: .5rem;
+        font-size: 1rem;
+    }
+    &:hover{
+        color: $white;
+        background-color: var(--secondary);
     }
 }
 
@@ -198,27 +269,6 @@ a, select , input , textarea , button{
         min-height: 34rem;
     }
 }
-
-.question--btn {
-    display: block;
-    width: 50%;
-    margin: 0 auto;
-    padding: 1.2rem;
-    font-size: 1.25rem;
-    font-weight: 700;
-    border-radius: 50rem;
-    color: #fff;
-    background-color: var(--accent);
-    border-color: transparent;
-    @media (max-width: 575.98px) {
-        width: 90%;
-        font-size: 1.5rem;
-    }
-    &:hover{
-        background-color: var(--secondary);
-    }
-}
-
 
 /* header starts */
 .header{
@@ -526,8 +576,8 @@ a, select , input , textarea , button{
 
 /* offers starts */
 .offers{
-    animation: fadeIn .5s;
     display: none;
+    animation: fadeIn .5s;
     background-color: $white;
     .bounty--card{
         min-height: 0;
@@ -566,6 +616,62 @@ a, select , input , textarea , button{
         }
         @media (min-width: 321px) and (max-width: 376px) {
             width: 70%;
+        }
+    }
+
+    .products{
+        display: none;
+        @media (min-width: 1300px){
+            max-width: 82.5rem;
+        }
+        .product{
+            width: 100%;
+            box-shadow: 0rem 0rem 0.5rem rgba(0,0,0,0.10);
+            border-radius: 0.3rem;
+            .product--img{
+                position: relative;
+                width: 50%;
+                background-color: #F7F7F7;
+                .product--badge{
+                    position: absolute;
+                    margin: 0.8rem;
+                    @media (max-width: 575.98px) {
+                        width: 35%;
+                    }
+                }
+            }
+            .product--desc{
+                width: 50%;
+                padding: 1rem;
+                .rating{
+                    -webkit-text-fill-color: $accent;
+                    -webkit-text-stroke-width: 0.07rem;
+                    -webkit-text-stroke-color: $chocolate;
+                }
+                .remaining{
+                    color: $red;
+                }
+                .product--timer{
+                    h6{
+                        span{
+                            color: $red;
+                        }
+                    }
+                    .btn--expired{
+                        background-color: $red;
+                    }
+                }
+            }
+        }
+        .grayed--out{
+            .product--img{
+                opacity: .3;
+            }
+            .product--desc{
+                .description{
+                    opacity: .3;
+                }
+            }
         }
     }
 }

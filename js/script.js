@@ -70,6 +70,49 @@ var questions = [
   },
 ];
 
+var cards = [
+  {
+    time: 'card1Time',
+    btn: 'card1Btn',
+  },
+  {
+    time: 'card2Time',
+    btn: 'card2Btn',
+  },
+  {
+    time: 'card3Time',
+    btn: 'card3Btn',
+  },
+  {
+    time: 'card4Time',
+    btn: 'card4Btn',
+  },
+  {
+    time: 'card5Time',
+    btn: 'card5Btn',
+  },
+  {
+    time: 'card6Time',
+    btn: 'card6Btn',
+  },
+  {
+    time: 'card7Time',
+    btn: 'card7Btn',
+  },
+  {
+    time: 'card8Time',
+    btn: 'card8Btn',
+  },
+  {
+    time: 'card9Time',
+    btn: 'card9Btn',
+  },
+  {
+    time: 'card10Time',
+    btn: 'card10Btn',
+  },
+];
+
 window.onload = function () {
     var fiveMinutes = 30 * 10;
     var display = document.querySelector('#timer');
@@ -140,7 +183,7 @@ function startSurvey() {
         );
       }
     }else {
-      // showOfferWall();
+      validateScreen();
     }
     cheers(progress);
 }
@@ -245,6 +288,46 @@ function validateScreen() {
 
   setTimeout(function () {
     $('#coupon').show();
-    $('#coupon').fadeIn();
-  }, 7000);
+    $('#products').show();
+
+    cards.forEach((val, index) => {
+      var timeDisplay = document.querySelector(`#${val.time}`);
+      const randomTime = getRandom(5, 7) * 60;
+      if (index + 1 === cards.length || index + 1 === 3) {
+        startTimer(5, timeDisplay, val.btn);
+      } else {
+        startTimer(randomTime, timeDisplay, val.btn);
+      }
+    });
+  }, 4500);
+}
+
+function getRandom(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function startTimer(duration, display, btnId) {
+  var timer = duration,
+  minutes,
+  seconds;
+  var timeInterval = setInterval(function () {
+  minutes = parseInt(timer / 60, 10);
+  seconds = parseInt(timer % 60, 10);
+
+  minutes = minutes < 10 ? '' + minutes : minutes;
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+
+  display.textContent = minutes + ':' + seconds;
+
+  if (--timer < 0) {
+    clearInterval(timeInterval);
+    $(`#${btnId}`).text('EXPIRED');
+    $(`#${btnId}`).addClass('btn--expired');
+    $(`#${btnId}`).css( "cursor", "not-allowed" );
+    $(`#${btnId}`).prop('onclick', null).off('click');
+    $(`#${btnId}`).removeAttr('href');
+    $(`#${btnId}`).parent().parent().parent().parent().addClass('grayed--out');
+    $(`#${btnId}`).parent().css( "opacity", "1" );
+  }
+}, 1000);
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap");
 :root {
   --white: #FFFFFF;
   --gray: #CFCFCF;
@@ -129,13 +129,45 @@ a, select, input, textarea, button {
   }
 }
 
+.reg--18 {
+  font-size: 1.125rem;
+}
+
+@media (max-width: 575.98px) {
+  .reg--18 {
+    font-size: 1rem;
+  }
+}
+
 .reg--20 {
   font-size: 1.25rem;
+}
+
+.italic--18 {
+  font-size: 1.125rem;
+  font-style: italic;
+}
+
+@media (max-width: 575.98px) {
+  .italic--18 {
+    font-size: 1rem;
+  }
 }
 
 .semi--20 {
   font-size: 1.25rem;
   font-weight: 600;
+}
+
+.semi--25 {
+  font-size: 1.5625rem;
+  font-weight: 600;
+}
+
+@media (max-width: 575.98px) {
+  .semi--25 {
+    font-size: 1rem;
+  }
 }
 
 .bold--12 {
@@ -171,6 +203,12 @@ a, select, input, textarea, button {
   font-weight: 700;
 }
 
+@media (max-width: 575.98px) {
+  .bold--18 {
+    font-size: 1rem;
+  }
+}
+
 .bold--20 {
   font-size: 1.25rem;
   font-weight: 700;
@@ -184,6 +222,12 @@ a, select, input, textarea, button {
 .bold--30 {
   font-size: 1.875rem;
   font-weight: 700;
+}
+
+@media (max-width: 575.98px) {
+  .bold--30 {
+    font-size: 1.25rem;
+  }
 }
 
 .bold--45 {
@@ -219,6 +263,56 @@ a, select, input, textarea, button {
 .start--btn:hover img {
   -webkit-transform: translateX(1rem);
           transform: translateX(1rem);
+}
+
+.question--btn {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  padding: 1.2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 50rem;
+  color: var(--white);
+  background-color: var(--accent);
+  border-color: transparent;
+}
+
+@media (max-width: 575.98px) {
+  .question--btn {
+    width: 90%;
+    font-size: 1.5rem;
+  }
+}
+
+.question--btn:hover {
+  background-color: var(--secondary);
+}
+
+.product--btn {
+  display: block;
+  text-align: center;
+  width: 70%;
+  padding: .8rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: .8rem;
+  color: var(--white);
+  background-color: var(--accent);
+  border-color: transparent;
+}
+
+@media (max-width: 575.98px) {
+  .product--btn {
+    width: 90%;
+    padding: .5rem;
+    font-size: 1rem;
+  }
+}
+
+.product--btn:hover {
+  color: var(--white);
+  background-color: var(--secondary);
 }
 
 /* card settings */
@@ -275,30 +369,6 @@ a, select, input, textarea, button {
   .bounty--card {
     min-height: 34rem;
   }
-}
-
-.question--btn {
-  display: block;
-  width: 50%;
-  margin: 0 auto;
-  padding: 1.2rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  border-radius: 50rem;
-  color: #fff;
-  background-color: var(--accent);
-  border-color: transparent;
-}
-
-@media (max-width: 575.98px) {
-  .question--btn {
-    width: 90%;
-    font-size: 1.5rem;
-  }
-}
-
-.question--btn:hover {
-  background-color: var(--secondary);
 }
 
 /* header starts */
@@ -755,9 +825,9 @@ a, select, input, textarea, button {
 
 /* offers starts */
 .offers {
+  display: none;
   -webkit-animation: fadeIn .5s;
           animation: fadeIn .5s;
-  display: none;
   background-color: var(--white);
 }
 
@@ -826,6 +896,71 @@ a, select, input, textarea, button {
   .offers .coupon {
     width: 70%;
   }
+}
+
+.offers .products {
+  display: none;
+}
+
+@media (min-width: 1300px) {
+  .offers .products {
+    max-width: 82.5rem;
+  }
+}
+
+.offers .products .product {
+  width: 100%;
+  -webkit-box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.3rem;
+}
+
+.offers .products .product .product--img {
+  position: relative;
+  width: 50%;
+  background-color: #F7F7F7;
+}
+
+.offers .products .product .product--img .product--badge {
+  position: absolute;
+  margin: 0.8rem;
+}
+
+@media (max-width: 575.98px) {
+  .offers .products .product .product--img .product--badge {
+    width: 35%;
+  }
+}
+
+.offers .products .product .product--desc {
+  width: 50%;
+  padding: 1rem;
+}
+
+.offers .products .product .product--desc .rating {
+  -webkit-text-fill-color: var(--accent);
+  -webkit-text-stroke-width: 0.07rem;
+  -webkit-text-stroke-color: var(--chocolate);
+}
+
+.offers .products .product .product--desc .remaining {
+  color: var(--red);
+}
+
+.offers .products .product .product--desc .product--timer h6 span {
+  color: var(--red);
+}
+
+.offers .products .product .product--desc .product--timer .btn--expired {
+  background-color: var(--red);
+}
+
+.offers .products .grayed--out .product--img {
+  opacity: .3;
+}
+
+.offers .products .grayed--out .product--desc .description {
+  opacity: .3;
 }
 
 /* footer starts */
