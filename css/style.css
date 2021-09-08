@@ -872,6 +872,7 @@ a, select, input, textarea, button {
 
 /* offers starts */
 .offers {
+  display: none;
   -webkit-animation: fadeIn .5s;
           animation: fadeIn .5s;
   background-color: var(--white);
@@ -894,12 +895,12 @@ a, select, input, textarea, button {
 }
 
 .offers .coupon {
-  display: none;
   color: var(--green);
   border: 3px dashed var(--green);
   padding: 0.3rem;
   width: 30%;
   margin: 0 auto;
+  opacity: 0;
 }
 
 @media (max-width: 575.98px) {
@@ -948,6 +949,19 @@ a, select, input, textarea, button {
   .offers .coupon {
     width: 70%;
   }
+}
+
+.offers .fadeInUp {
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.offers .products {
+  display: none;
 }
 
 @media (min-width: 1300px) {
@@ -1110,6 +1124,12 @@ a, select, input, textarea, button {
   }
 }
 
+.footer .comment {
+  display: none;
+  -webkit-animation: fadeIn .5s;
+          animation: fadeIn .5s;
+}
+
 .footer .comment .comment--card {
   background-color: var(--white);
   width: 100%;
@@ -1226,6 +1246,30 @@ a, select, input, textarea, button {
     opacity: 0;
   }
   100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    -webkit-transform: translate3d(0, 40px, 0);
+            transform: translate3d(0, 40px, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    -webkit-transform: translate3d(0, 40px, 0);
+            transform: translate3d(0, 40px, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
     opacity: 1;
   }
 }

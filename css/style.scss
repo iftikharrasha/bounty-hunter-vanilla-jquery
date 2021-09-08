@@ -602,7 +602,7 @@ a, select , input , textarea , button{
 
 /* offers starts */
 .offers{
-    // display: none;
+    display: none;
     animation: fadeIn .5s;
     background-color: $white;
     .bounty--card{
@@ -616,12 +616,12 @@ a, select , input , textarea , button{
     }
 
     .coupon{
-        display: none;
         color: $green;
         border: 3px dashed $green;
         padding: 0.3rem;
         width: 30%;
         margin: 0 auto;
+        opacity: 0;
         @media (max-width: 575.98px) {
             width: 65%;
         }
@@ -648,8 +648,14 @@ a, select , input , textarea , button{
         }
     }
 
+    .fadeInUp{
+        animation-name: fadeInUp;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+
     .products{
-        // display: none;
+        display: none;
         @media (min-width: 1300px){
             max-width: 82.5rem;
         }
@@ -771,6 +777,8 @@ a, select , input , textarea , button{
     }
 
     .comment{
+        display: none;
+        animation: fadeIn .5s;
         .comment--card{
             background-color: $white;
             width: 100%;
@@ -850,5 +858,16 @@ a, select , input , textarea , button{
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
     }
 }

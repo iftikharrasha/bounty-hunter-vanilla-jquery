@@ -284,10 +284,10 @@ function validateScreen() {
     $('#survey').hide();
     $('#header').show();
     $('#offers').show();
+    $('#comment').show();
   }, 4500);
 
   setTimeout(function () {
-    $('#coupon').show();
     $('#products').show();
 
     cards.forEach((val, index) => {
@@ -300,6 +300,10 @@ function validateScreen() {
       }
     });
   }, 4500);
+
+  setTimeout(function () {
+    $('#coupon').addClass('fadeInUp');
+  }, 5500);
 }
 
 function getRandom(min, max) {
