@@ -99,7 +99,6 @@ function startExpire(duration, display) {
     if (--timer < 0) {
       clearInterval(timeInterval);
       startExpire(duration, display);  //timer loops again
-    //   window.location.reload(1);
     }
   }, 1000);
 }
@@ -154,7 +153,7 @@ function cheers(prog = '100') {
       txt = "- Almost there!"
   }
   if (prog > 50 && prog <= 100) {
-      txt = ""
+      txt = "- Almost there!"
   }
 
   $("#shoutOuts").text(txt);
@@ -228,19 +227,23 @@ function validateScreen() {
 
   setTimeout(function () {
     $('#v1b').addClass('fade--gone');
-  }, 1500);
+  }, 2000);
 
   setTimeout(function () {
     $('#v2b').addClass('fade--gone');
-  }, 2500);
+  }, 3000);
 
   setTimeout(function () {
     $('#v3b').addClass('fade--gone');
-  }, 3500);
+  }, 4000);
 
   setTimeout(function () {
     $('#survey').hide();
     $('#header').show();
     $('#offers').show();
-  }, 4000);
+  }, 4500);
+
+  setTimeout(function () {
+    //show success message
+  }, 7000);
 }

@@ -216,6 +216,63 @@ a, select, input, textarea, button {
           transform: translateX(1rem);
 }
 
+/* card settings */
+.bounty--card {
+  background-image: url(../img/pattern-xl.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  border-radius: 0.75rem;
+  -webkit-box-shadow: 1px 1px 14px -1px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 14px -1px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 767.98px) {
+  .bounty--card {
+    width: 100%;
+    min-height: 32rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .bounty--card {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1531.98px) {
+  .bounty--card {
+    width: 65%;
+  }
+}
+
+@media (min-width: 1532px) and (max-width: 2499.99px) {
+  .bounty--card {
+    width: 80%;
+  }
+}
+
+@media (min-width: 2500px) {
+  .bounty--card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  .bounty--card {
+    min-height: 36rem;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 376px) {
+  .bounty--card {
+    min-height: 34rem;
+  }
+}
+
 .question--btn {
   display: block;
   width: 50%;
@@ -357,60 +414,9 @@ a, select, input, textarea, button {
   }
 }
 
-.hero .hero--banner .bounty--card {
-  background-image: url(../img/pattern.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 80%;
-  margin: 0 auto;
-  padding: 2.5rem 2rem;
-  border-radius: 0.75rem;
-  -webkit-box-shadow: 1px 1px 14px -1px rgba(0, 0, 0, 0.5);
-          box-shadow: 1px 1px 14px -1px rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 767.98px) {
+@media (max-width: 575.98px) {
   .hero .hero--banner .bounty--card {
-    background-image: url(../img/pattern-xs.png);
-    width: 100%;
-    min-height: 32rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .hero .hero--banner .bounty--card {
-    width: 100%;
-  }
-}
-
-@media (min-width: 1300px) and (max-width: 1531.98px) {
-  .hero .hero--banner .bounty--card {
-    width: 65%;
-  }
-}
-
-@media (min-width: 1532px) and (max-width: 2499.99px) {
-  .hero .hero--banner .bounty--card {
-    width: 80%;
-  }
-}
-
-@media (min-width: 2500px) {
-  .hero .hero--banner .bounty--card {
-    width: 100%;
-  }
-}
-
-@media (max-width: 320px) {
-  .hero .hero--banner .bounty--card {
-    min-height: 36rem;
-  }
-}
-
-@media (min-width: 321px) and (max-width: 376px) {
-  .hero .hero--banner .bounty--card {
-    min-height: 34rem;
+    background-image: url(../img/pattern-xs-1.png);
   }
 }
 
@@ -631,6 +637,13 @@ a, select, input, textarea, button {
   }
 }
 
+@media (min-width: 1300px) and (max-width: 1531.98px) {
+  .survey .survey--card {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
 .survey .survey--card .survey--inner {
   width: 65%;
   margin: 0 auto;
@@ -639,7 +652,7 @@ a, select, input, textarea, button {
 
 @media (max-width: 575.98px) {
   .survey .survey--card .survey--inner {
-    width: 90%;
+    width: 100%;
   }
 }
 
@@ -686,6 +699,41 @@ a, select, input, textarea, button {
           animation: fadeIn .3s;
 }
 
+.survey .survey--card .survey--inner .validate .validate--table {
+  width: 70%;
+  margin: 0 auto;
+}
+
+@media (max-width: 575.98px) {
+  .survey .survey--card .survey--inner .validate .validate--table {
+    width: 100%;
+  }
+}
+
+@media (min-width: 2500px) {
+  .survey .survey--card .survey--inner .validate .validate--table {
+    width: 80%;
+  }
+}
+
+@media (max-width: 320px) {
+  .survey .survey--card .survey--inner .validate .validate--table p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 376px) {
+  .survey .survey--card .survey--inner .validate .validate--table p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .survey .survey--card .survey--inner .validate .validate--table p span img {
+    width: 2rem;
+  }
+}
+
 .survey .survey--card .survey--inner .validate .fade--opacity {
   opacity: .5;
 }
@@ -700,6 +748,17 @@ a, select, input, textarea, button {
   -webkit-animation: fadeIn .5s;
           animation: fadeIn .5s;
   display: none;
+  background-color: var(--white);
+}
+
+.offers .bounty--card {
+  min-height: 0;
+}
+
+@media (max-width: 575.98px) {
+  .offers .bounty--card {
+    background-image: url(../img/pattern-xs-2.png);
+  }
 }
 
 /* footer starts */

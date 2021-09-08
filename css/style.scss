@@ -161,6 +161,41 @@ a, select , input , textarea , button{
     }
 }
 
+/* card settings */
+.bounty--card{
+    background-image: url(../img/pattern-xl.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80%;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 1px 1px 14px -1px rgba(0,0,0,0.50);
+    @media (max-width: 767.98px) {
+        width: 100%;
+        min-height: 32rem;
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        width: 100%;
+    }
+    @media (min-width: 1300px) and (max-width: 1531.98px){
+        width: 65%;
+    }
+    @media (min-width: 1532px) and (max-width: 2499.99px) {
+        width: 80%;
+    }
+    @media (min-width: 2500px) {
+        width: 100%;
+    }
+    @media (max-width: 320px) {
+        min-height: 36rem;
+    }
+    @media (min-width: 321px) and (max-width: 376px) {
+        min-height: 34rem;
+    }
+}
+
 .question--btn {
     display: block;
     width: 50%;
@@ -259,37 +294,8 @@ a, select , input , textarea , button{
         }
     
         .bounty--card{
-            background-image: url(../img/pattern.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 80%;
-            margin: 0 auto;
-            padding: 2.5rem 2rem;
-            border-radius: 0.75rem;
-            box-shadow: 1px 1px 14px -1px rgba(0,0,0,0.50);
-            @media (max-width: 767.98px) {
-                background-image: url(../img/pattern-xs.png);
-                width: 100%;
-                min-height: 32rem;
-            }
-            @media (min-width: 768px) and (max-width: 991.98px) {
-                width: 100%;
-            }
-            @media (min-width: 1300px) and (max-width: 1531.98px){
-                width: 65%;
-            }
-            @media (min-width: 1532px) and (max-width: 2499.99px) {
-                width: 80%;
-            }
-            @media (min-width: 2500px) {
-                width: 100%;
-            }
-            @media (max-width: 320px) {
-                min-height: 36rem;
-            }
-            @media (min-width: 321px) and (max-width: 376px) {
-                min-height: 34rem;
+            @media (max-width: 575.98px) {
+                background-image: url(../img/pattern-xs-1.png);
             }
             .circle--wrapper{
                 position: relative;
@@ -429,12 +435,16 @@ a, select , input , textarea , button{
         @media (max-width: 575.98px) {
             border-radius: 4rem;
         }
+        @media (min-width: 1300px) and (max-width: 1531.98px){
+            width: 80%;
+            margin: 0 auto;
+        }
         .survey--inner{
             width: 65%;
             margin: 0 auto;
             padding: 3rem 0;
             @media (max-width: 575.98px) {
-                width: 90%;
+                width: 100%;
             }
             @media (min-width: 576px) and (max-width: 991.98px) {
                 width: 90%;
@@ -471,6 +481,31 @@ a, select , input , textarea , button{
             }
             .validate{
                 animation: fadeIn .3s;
+                .validate--table{
+                    width: 70%;
+                    margin: 0 auto;
+                    @media (max-width: 575.98px) {
+                        width: 100%;
+                    }
+                    @media (min-width: 2500px) {
+                        width: 80%;
+                    }
+                    p{
+                        @media (max-width: 320px) {
+                            font-size: 0.9rem;
+                        }
+                        @media (min-width: 321px) and (max-width: 376px) {
+                            font-size: 1.1rem;
+                        }
+                        span{
+                            img{
+                                @media (max-width: 575.98px) {
+                                    width: 2rem;
+                                }
+                            }
+                        }
+                    }             
+                }
                 .fade--opacity{
                     opacity: .5;
                 }
@@ -487,6 +522,13 @@ a, select , input , textarea , button{
 .offers{
     animation: fadeIn .5s;
     display: none;
+    background-color: $white;
+    .bounty--card{
+        min-height: 0;
+        @media (max-width: 575.98px) {
+            background-image: url(../img/pattern-xs-2.png);
+        }
+    }
 }
 
 /* footer starts */
