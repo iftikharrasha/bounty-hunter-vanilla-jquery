@@ -254,7 +254,7 @@ a, select , input , textarea , button{
     }
     @media (max-width: 376px) {
         font-size: 0.8rem;
-        padding: .3rem;
+        padding: .8rem;
     }
     &:hover{
         color: $white;
@@ -289,10 +289,10 @@ a, select , input , textarea , button{
         width: 100%;
     }
     @media (max-width: 320px) {
-        min-height: 36rem;
+        min-height: 33rem;
     }
     @media (min-width: 321px) and (max-width: 376px) {
-        min-height: 34rem;
+        min-height: 30rem;
     }
 }
 
@@ -307,7 +307,7 @@ a, select , input , textarea , button{
 .hero{
     animation: fadeIn .1s;
     .hero--banner{
-        background-image: url(../img/hero-bg.webp);
+        background-image: url(../img/hero-bg.png);
         width: 100%;
         min-height: 43.75rem;
         background-position: center;
@@ -317,15 +317,21 @@ a, select , input , textarea , button{
             min-height: 60rem;
         }
         @media (max-width: 575.98px) {
-            background-image: url(../img/hero-bg-xs.webp);
-            min-height: 65rem;
+            background-image: url(../img/hero-bg-xs.png);
+            min-height: 56rem;
+        }
+        @media (max-width: 320px) {
+            min-height: 58rem;
+        }
+        @media (min-width: 321px) and (max-width: 376px) {
+            min-height: 54rem;
         }
         @media (min-width: 2500px) {
             min-height: 47rem;
         }
         .hero--title{
             @media (max-width: 575.98px) {
-                padding: 5rem 0 !important;
+                padding: 3rem 0 !important;
             }
             h1{
                 color: $accent;
@@ -407,11 +413,17 @@ a, select , input , textarea , button{
                         right: 6.5rem;
                     }
                     @media (max-width: 320px) {
-                        top: -4.5rem;
                         right: -0.5rem;
+                        top: -1.5rem;
                     }
                     @media (min-width: 321px) and (max-width: 376px) {
                         right: .2rem;
+                    }
+                    @media (max-width: 575.98px) {
+                        left: 10rem;
+                        right: 0;
+                        margin-left: auto;
+                        margin-right: auto;
                     }
                 }
                 .promo {
@@ -421,6 +433,12 @@ a, select , input , textarea , button{
                     height: 11.25rem;
                     border-radius: 100%;
                     border: 0.125rem solid #F5F5F5;
+                    @media (max-width: 575.98px) {
+                        left: 0;
+                        right: 6rem;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
                     .promo--circle {
                         padding: 1.875rem 1.5625rem;
                         animation: heartbeat 3s infinite linear;
@@ -450,7 +468,7 @@ a, select , input , textarea , button{
                     left:0;
                     bottom:0;
                     right:0;
-                    background: linear-gradient(60deg, transparent 0%, transparent 35%, #ffffff99 50%, transparent 62%, transparent 100%);
+                    background: linear-gradient(60deg, #ffffff00 0%, #ffffff00 35%, #ffffff99 50%, #ffffff00 62%, #ffffff00 100%);
                     animation-name: shimmer;
                     animation-duration: 4s;
                     animation-iteration-count: infinite;
@@ -476,9 +494,6 @@ a, select , input , textarea , button{
         z-index: 999;
         bottom: 0;
         width: 100%;
-        @media (max-width: 575.98px) {
-            bottom: 20px;
-        }
         p{
             @media (max-width: 575.98px) {
                 font-size: 1.3rem;
@@ -511,15 +526,16 @@ a, select , input , textarea , button{
         width: 100%;
         padding: 2.5rem 2rem;
         border-radius: 7rem;
-        margin-top: 7rem;
+        margin-top: 3rem;
         box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.50);
         min-height: 40rem;
         @media (max-width: 575.98px) {
             border-radius: 4rem;
+            margin-top: 2rem;
         }
         @media (min-width: 1300px) and (max-width: 1531.98px){
             width: 80%;
-            margin: 0 auto;
+            margin: 3rem auto;
         }
         .survey--inner{
             width: 65%;
@@ -716,6 +732,9 @@ a, select , input , textarea , button{
 .footer{
     animation: fadeIn .5s;
     padding: 7rem 0;
+    @media (max-width: 575.98px) {
+        padding: 5rem 0;
+    }
     .conditions{
         width: 80%;
         margin: 0 auto;
@@ -868,6 +887,6 @@ a, select , input , textarea , button{
 
     to {
         transform: translate3d(0,0,0);
-        opacity: 1
+        opacity: 1;
     }
 }
