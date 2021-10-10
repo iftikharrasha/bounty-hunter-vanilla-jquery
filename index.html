@@ -13,577 +13,620 @@
 <body>
     <!--top text for bounties-->
     <header class="header text-center" id="header">
-        <h6 class="bold--16 text-white">Over $3,200,000 in Offer Rewards claimed so far!</h6>
+        <h6 class="medi--16--2 text-white">Over $3,200,000 in Offer Rewards claimed so far!</h6>
     </header>
     <main>
         <!--screen #1-->
         <section class="hero" id="hero">
             <div class="hero--banner">
                 <div class="container">
-                    <div class="hero--title text-center py-5">
-                        <h2 class="bold--20">Online Survey About</h2>
-                        <h1 class="bold--45">Wholesale Club</h1>
+                    <div class="hero--title text-center pt-4 pb-5">
+                        <h2 class="bold--20--2">Online Survey About</h2>
+                        <h1 class="bold--50--2 mt-2">Welgreens</h1>
                     </div>
-                    <div class="bounty--card mb-5">
-                        <div class="row">
-                            <div class="col-md-7">
-                                <p class="bold--20">Congratulations!</p>
-                                <p class="reg--20">Complete this short survey about X and as a thank you, you will <span class="bold--20">unlock access</span> to offers up to <span class="bold--20">$100 cash value</span>!
-                                    <br><br>
-                                    Act Fast! Today: <span class="bold--20 date--today"></span> is the last day before this special offer expires for the year.
-                                </p>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="circle--wrapper">
-                                    <div class="subPromo d-flex align-items-center justify-content-center">
-                                        <span class="bold--30">$100</span>
-                                        <span class="bold--18">Reward!</span>
+                    <div class="bounty--card mt-3 mb-5" id="bounty">
+                        <div class="circle--wrapper">
+                            <div class="promo promo--sm d-flex align-items-center justify-content-center">
+                                <div class="promo--circle"></div>
+                                <img class="img-fluid" src="./img/product.png" alt="promo" id="promo--img">
+                                <img class="img-fluid" src="./img/gift icon.png" alt="box" id="box--img"  style="display:none;">
+                                <div class="progress--bar" id="progress--bar"  style="display:none;">
+                                    <div class="barOverflow">
+                                      <div class="bar" id="bar"></div>
                                     </div>
-                                    <div class="promo d-flex align-items-center justify-content-center">
-                                        <div class="promo--circle">
-                                            <img class="img-fluid" src="./img/product.png" alt="promo">
+                                    <p class="black--16--2 bar--count"><span id="percentCount">0</span>%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero--contents" id="hero--contents">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <p class="bold--30--2">Congratulations!</p>
+                                    <p class="reg--20--2 details">Complete this short survey about <span class="bold--20">Welgreens</span> and as a thank you, you will <span class="bold--20">unlock access</span> to offers up to <span class="bold--20">$100 cash value</span>!
+                                    </p>
+                                </div>
+                                <div class="col-12 mt-3 mb-2">
+                                    <p class="bold--20--2 d-flex align-items-center justify-content-center">
+                                        <span>TIME REMAINING:<span class="timer px-2" id="timer2">5:00</span></span>
+                                    </p>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <div class="start--div">
+                                            <button id="surveyBtn" class="start--btn d-flex align-items-center justify-content-center" onclick="startSurvey();">
+                                                <span class="black--23">START SURVEY NOW</span>
+                                                <img class="ml-3" src="./img/arrow.svg" alt="arrow">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center mt-4">
+                                    <p class="reg--20--2">Act Fast! Today: <span class="bold--20 date--today"></span> is the last day before this special offer expires for the year.</p> 
+                                </div>
+                            </div>
+                        </div>
+                        <!--screen #2-->
+                        <div class="survey mb-4" id="survey">
+                            <div class="container">
+                                <div class="survey--card">
+                                    <div class="survey--inner">
+                                        <div class="question pb-3" id="question">
+                                            <h2 class="px-sm-5 py-sm-4 reg--20--2 text-center" id="questionText"></h2>
+                                        </div>
+                                        <div class="choices" id="choices">
+                                            <div id="questionBody" style="display:none;"></div>
+                                        </div>
+                                        <div class="validate" id="validate" style="display:none;">
+                                            <div class="text-center">
+                                                <img src="./img/poppers.png" alt="poppers">
+                                            </div>
+                                            <table class="validate--table text-center">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <p class="fade--opacity bold--20" id="ticked1">
+                                                                Submitting answers...
+                                                            </p>
+                                                            <p class="fade--opacity my-1 bold--20" id="ticked2">
+                                                                Checking for duplicate IP addresses...
+                                                            </p>
+                                                            <p class="fade--opacity bold--20" id="ticked3">
+                                                                Checking our inventory for products...
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="start d-flex align-items-center justify-content-center pt-3">
-                        <div class="start--div">
-                            <button id="surveyBtn" class="start--btn d-flex align-items-center justify-content-center" onclick="startSurvey();">
-                                <span class="black--23">START SURVEY NOW</span>
-                                <img class="ml-3" src="./img/arrow.svg" alt="arrow">
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <div class="expired py-3 text-center">
-                <p class="bold--30 d-flex align-items-center justify-content-center">
-                    <img class="mr-2" src="./img/timer.svg" alt="timer">
-                    <span>This limited one-time offer expires in
+            <div class="expired py-sm-2 text-center">
+                <p class="bold--30--2 d-flex align-items-center justify-content-center">
+                    <span class="watch mr-3">
+                        <img src="./img/timer.svg" alt="timer">
+                    </span>
+                    <span class="limited">This limited one-time offer expires in
                         <span class="timer px-2" id="timer">5:00</span>
                     </span>
                 </p>
             </div>
         </section>
 
-        <!--screen #2-->
-        <section class="survey" id="survey">
-            <div class="container">
-                <div class="survey--card">
-                    <div class="survey--inner">
-                        <div class="progress--bar" id="progressBar">
-                            <div class="percent--detail mb-3">
-                                <h4 class="bold--20">
-                                    <span id="percentCount">0</span>% Complete 
-                                    <span id="shoutOuts"></span>
-                                </h4>
-                            </div>
-                            <div class="progress--detail">
-                                <div class="progress" id="progressLine"></div>
-                            </div>
-                        </div>
-                        <div class="question py-5" id="question">
-                            <h4 class="bold--20 text-center">
-                                Question <span id="questionLive"></span> out of <span id="questionLength"></span>:
-                            </h4>
-                            <h2 class="text-center px-sm-5 py-4 bold--22" id="questionText"></h2>
-                        </div>
-                        <div class="choices" id="choices">
-                            <div id="questionBody" style="display:none;"></div>
-                        </div>
-                        <div class="validate mt-5" id="validate" style="display:none;">
-                            <table class="validate--table">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <p class="fade--opacity bold--20" id="ticked1">
-                                                <span class="mr-3"><img src="./img/check-circle.svg" alt="Submitting"></span> Submitting answers...
-                                            </p>
-                                            <p class="fade--opacity my-3 bold--20" id="ticked2">
-                                                <span class="mr-3"><img src="./img/check-circle.svg" alt="IP Address"></span> Checking for duplicate IP addresses...
-                                            </p>
-                                            <p class="fade--opacity bold--20" id="ticked3">
-                                                <span class="mr-3"><img src="./img/check-circle.svg" alt="Inventory"></span> Checking our inventory for products...
-                                            </p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!--screen #3-->
-        <section class="offers py-5" id="offers">
-            <div class="container">
-                <div class="bounty--card">
+        <section class="offers" id="offers">
+            <div class="offers--top">
+                <div class="container pt-5">
                     <div class="row">
-                        <div class="col-md-12">
-                            <p class="bold--20">Thank You For Completing Our Survey!</p>
-                            <p class="reg--20">You’ve have <span class="bold--20">unlocked </span> 5+ special offers. Due to high participation today rewards <span class="bold--20 date--today">can only be guaranteed</span> for (10) minutes.
+                        <div class="col-md-12 text-center">
+                            <p class="bold--20 mb-4">Thank You For Completing Our Survey!</p>
+                            <p class="reg--20">You have <span class="bold--20">unlocked </span> 5+ special offers. <br> Due to high participation today, rewards <span class="bold--20">can only be guaranteed</span> for (10) minutes.
                             </p>
+                            <div class="coupon--bg mt-4">
+                                <div class="coupon text-center mt-4" id="coupon">
+                                    <p class="semi--20">Coupon code: <span class="bold--20">“MYSHOP212”</span> has been applied ✓</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="coupon text-center my-5" id="coupon">
-                    <p class="semi--20">Coupon code: <span class="bold--20">“MYSHOP212”</span> <br> has been applied ✓</p>
                 </div>
             </div>
 
-            <div class="container products" id="products">
-                <div class="row">
-                    <div class="col-xl-6 mt-4">
-                        <div class="product d-flex align-items-center justify-content-center">
-                            <div class="product--img">
-                                <img class="product--badge" src="./img/top-rated.png" alt="popular">
-                                <div class="img-inner text-center">
-                                    <img class="img-fluid" src="./img/earpods.png" alt="ear pod">
-                                </div>
-                            </div>
-                            <div class="product--desc">
-                                <div class="text-container">
-                                    <div class="description reg--18">
-                                        <h2 class="semi--25">Hi-Tech Wireless Ear Pods</h2>
-                                        <div class="rating-container">
-                                            <span class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star-half-alt"></i>
-                                            </span>
-                                            <span class="reg--20">(847)</span>
+            <div class="offers--below pb-5">
+                <div class="container products mt-4" id="products">
+                    <div class="row">
+                        <div class="col-lg-6 mt-4">
+                            <div class="product">
+                                <div class="product--top d-flex">
+                                    <div class="product--img">
+                                        <img class="product--badge" src="./img/top-rated.png" alt="popular">
+                                        <div class="img-inner text-center">
+                                            <img class="img-fluid" src="./img/earpods.png" alt="ear pod">
                                         </div>
-
-                                        <h3 class="italic--reg--18">AirPods Pro, Wireless Charging Case, Silicone ear tips &amp; Lightning to USB-C Cable!</h3>
-
-                                        <span>
-                                            <font class="bold--30">$0.00</font>
-                                            <del>$119.97</del>
-                                        </span>
-
-                                        <p>Shipping: $<span>9.99</span></p>
-                                        <p class="remaining"> Qty Remaining: <span>3</span></p>
                                     </div>
-
-                                    <div class="product--timer">
-                                        <h6 class="bold--18 mt-3 mb-2">
-                                            Offer expires in
-                                            <span id="card1Time" class="time">0:00</span>
-                                        </h6>
-                                        <a href="#" target="_blank" id="card1Btn" class="product--btn">CLAIM ITEM</a>
+                                    <div class="product--desc">
+                                        <div class="text-container">
+                                            <div class="description reg--18">
+                                                <h2 class="semi--25">Hi-Tech Wireless Ear Pods</h2>
+                                                <div class="rating-container">
+                                                    <span class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                    </span>
+                                                    <span class="reg--20">(847)</span>
+                                                </div>
+        
+                                                <h3 class="italic--reg--18">AirPods Pro, Wireless Charging Case, Silicone ear tips &amp; Lightning to USB-C Cable!</h3>
+        
+                                                <span>
+                                                    <font class="bold--30">$0.00</font>
+                                                    <del>$119.97</del>
+                                                </span>
+        
+                                                <p>Shipping: $<span>9.99</span></p>
+                                                <p class="remaining"> Qty Remaining: <span>3</span></p>
+                                            </div>
+        
+                                            <div class="product--timer">
+                                                <h6 class="bold--18 mt-3 mb-2">
+                                                    Offer expires in
+                                                    <span id="card1Time" class="time">0:00</span>
+                                                </h6>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="product--below">
+                                    <a href="#" target="_blank" id="card1Btn" class="product--btn w-100">CLAIM ITEM</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-xl-6 mt-4">
-                        <div class="product d-flex align-items-center justify-content-center">
-                            <div class="product--img">
-                                <img class="img-fluid product--badge" src="./img/most-popular.png" alt="popular">
-                                <div class="img-inner text-center">
-                                    <img class="img-fluid" src="./img/watch.png" alt="Smart Watch">
-                                </div>
-                            </div>
-                            <div class="product--desc">
-                                <div class="text-container">
-                                    <div class="description reg--18">
-                                        <h2 class="semi--25">Hi-Tech Wireless Ear Pods</h2>
-                                        <div class="rating-container">
-                                            <span class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                            <span class="reg--20">(317)</span>
+    
+                        <div class="col-lg-6 mt-4">
+                            <div class="product">
+                                <div class="product--top d-flex">
+                                    <div class="product--img">
+                                        <img class="img-fluid product--badge" src="./img/most-popular.png" alt="popular">
+                                        <div class="img-inner text-center">
+                                            <img class="img-fluid" src="./img/watch.png" alt="Smart Watch">
                                         </div>
-
-                                        <h3 class="italic--reg--18">Receive Messages, Camera Control, , Heart Monitoring and more!</h3>
-
-                                        <span>
-                                            <font class="bold--30">$0.00</font>
-                                            <del>$89.99</del>
-                                        </span>
-
-                                        <p>Shipping: $<span>6.95</span></p>
-                                        <p class="remaining"> Qty Remaining: <span>4</span></p>
                                     </div>
-
-                                    <div class="product--timer">
-                                        <h6 class="bold--18 mt-3 mb-2">
-                                            Offer expires in
-                                            <span id="card2Time" class="time">0:00</span>
-                                        </h6>
-                                        <a href="#" target="_blank" id="card2Btn" class="product--btn">CLAIM ITEM</a>
+                                    <div class="product--desc">
+                                        <div class="text-container">
+                                            <div class="description reg--18">
+                                                <h2 class="semi--25">Smart Watch© + Heart & Steps!</h2>
+                                                <div class="rating-container">
+                                                    <span class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                    <span class="reg--20">(317)</span>
+                                                </div>
+        
+                                                <h3 class="italic--reg--18">Receive Messages, Camera Control, , Heart Monitoring and more!</h3>
+        
+                                                <span>
+                                                    <font class="bold--30">$0.00</font>
+                                                    <del>$89.99</del>
+                                                </span>
+        
+                                                <p>Shipping: $<span>6.95</span></p>
+                                                <p class="remaining"> Qty Remaining: <span>4</span></p>
+                                            </div>
+        
+                                            <div class="product--timer">
+                                                <h6 class="bold--18 mt-3 mb-2">
+                                                    Offer expires in
+                                                    <span id="card2Time" class="time">0:00</span>
+                                                </h6>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="product--below">
+                                    <a href="#" target="_blank" id="card2Btn" class="product--btn w-100">CLAIM ITEM</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-xl-6 mt-4">
-                        <div class="product d-flex align-items-center justify-content-center">
-                            <div class="product--img">
-                                <div class="img-inner text-center">
-                                    <img class="img-fluid" src="./img/dashcam.png" alt="Dash Cam">
-                                </div>
-                            </div>
-                            <div class="product--desc">
-                                <div class="text-container">
-                                    <div class="description reg--18">
-                                        <h2 class="semi--25">Dash-Cam X300 w/ Night-Vision + Motion Detection</h2>
-                                        <div class="rating-container">
-                                            <span class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                            <span class="reg--20">(1293)</span>
+    
+                        <div class="col-lg-6 mt-4">
+                            <div class="product">
+                                <div class="product--top d-flex">
+                                    <div class="product--img">
+                                        <div class="img-inner text-center">
+                                            <img class="img-fluid" src="./img/dashcam.png" alt="Dash Cam">
                                         </div>
-
-                                        <h3 class="italic--reg--18">Your eyes for everything that occurs on the road. Reduce your insurance...</h3>
-
-                                        <span>
-                                            <font class="bold--30">$0.00</font>
-                                            <del>$79.95</del>
-                                        </span>
-
-                                        <p>Shipping: $<span>6.95</span></p>
-                                        <p class="remaining"> Qty Remaining: <span>2</span></p>
                                     </div>
-
-                                    <div class="product--timer">
-                                        <h6 class="bold--18 mt-3 mb-2">
-                                            Offer expires in
-                                            <span id="card3Time" class="time">0:00</span>
-                                        </h6>
-                                        <a href="#" target="_blank" id="card3Btn" class="product--btn">CLAIM ITEM</a>
+                                    <div class="product--desc">
+                                        <div class="text-container">
+                                            <div class="description reg--18">
+                                                <h2 class="semi--25">Dash-Cam X300 w/ Night-Vision + Motion Detection</h2>
+                                                <div class="rating-container">
+                                                    <span class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                    <span class="reg--20">(1293)</span>
+                                                </div>
+        
+                                                <h3 class="italic--reg--18">Your eyes for everything that occurs on the road. Reduce your insurance...</h3>
+        
+                                                <span>
+                                                    <font class="bold--30">$0.00</font>
+                                                    <del>$79.95</del>
+                                                </span>
+        
+                                                <p>Shipping: $<span>6.95</span></p>
+                                                <p class="remaining"> Qty Remaining: <span>2</span></p>
+                                            </div>
+        
+                                            <div class="product--timer">
+                                                <h6 class="bold--18 mt-3 mb-2">
+                                                    Offer expires in
+                                                    <span id="card3Time" class="time">0:00</span>
+                                                </h6>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="product--below">
+                                    <a href="#" target="_blank" id="card3Btn" class="product--btn w-100">CLAIM ITEM</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-xl-6 mt-4">
-                        <div class="product d-flex align-items-center justify-content-center">
-                            <div class="product--img">
-                                <div class="img-inner text-center">
-                                    <img class="img-fluid" src="./img/ipad.png" alt="iPad">
-                                </div>
-                            </div>
-                            <div class="product--desc">
-                                <div class="text-container">
-                                    <div class="description reg--18">
-                                        <h2 class="semi--25">iPad Pro</h2>
-                                        <div class="rating-container">
-                                            <span class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star-half-alt"></i>
-                                            </span>
-                                            <span class="reg--20">(476)</span>
+    
+                        <div class="col-lg-6 mt-4">
+                            <div class="product">
+                                <div class="product--top d-flex">
+                                    <div class="product--img">
+                                        <div class="img-inner text-center">
+                                            <img class="img-fluid" src="./img/ipad.png" alt="iPad">
                                         </div>
-
-                                        <h3 class="italic--reg--18">Your chance to Get the New iPad Pro + Magic Keyboard! Limited Offer!</h3>
-
-                                        <span>
-                                            <font class="bold--30">$0.00</font>
-                                            <del>$600.00</del>
-                                        </span>
-
-                                        <p>Shipping: $<span>19.75</span></p>
-                                        <p class="remaining"> Qty Remaining: <span>1</span></p>
                                     </div>
-
-                                    <div class="product--timer">
-                                        <h6 class="bold--18 mt-3 mb-2">
-                                            Offer expires in
-                                            <span id="card4Time" class="time">0:00</span>
-                                        </h6>
-                                        <a href="#" target="_blank" id="card4Btn" class="product--btn">CLAIM ITEM</a>
+                                    <div class="product--desc">
+                                        <div class="text-container">
+                                            <div class="description reg--18">
+                                                <h2 class="semi--25">iPad Pro</h2>
+                                                <div class="rating-container">
+                                                    <span class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                    </span>
+                                                    <span class="reg--20">(476)</span>
+                                                </div>
+        
+                                                <h3 class="italic--reg--18">Your chance to Get the New iPad Pro + Magic Keyboard! Limited Offer!</h3>
+        
+                                                <span>
+                                                    <font class="bold--30">$0.00</font>
+                                                    <del>$600.00</del>
+                                                </span>
+        
+                                                <p>Shipping: $<span>19.75</span></p>
+                                                <p class="remaining"> Qty Remaining: <span>1</span></p>
+                                            </div>
+        
+                                            <div class="product--timer">
+                                                <h6 class="bold--18 mt-3 mb-2">
+                                                    Offer expires in
+                                                    <span id="card4Time" class="time">0:00</span>
+                                                </h6>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="product--below">
+                                    <a href="#" target="_blank" id="card4Btn" class="product--btn w-100">CLAIM ITEM</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-xl-6 mt-4">
-                        <div class="product d-flex align-items-center justify-content-center">
-                            <div class="product--img">
-                                <div class="img-inner text-center">
-                                    <img class="img-fluid" src="./img/keto.png" alt="Keto">
-                                </div>
-                            </div>
-                            <div class="product--desc">
-                                <div class="text-container">
-                                    <div class="description reg--18">
-                                        <h2 class="semi--25">Keto Rapid Weight Loss</h2>
-                                        <div class="rating-container">
-                                            <span class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                            <span class="reg--20">(553)</span>
+    
+                        <div class="col-lg-6 mt-4">
+                            <div class="product">
+                                <div class="product--top d-flex">
+                                    <div class="product--img">
+                                        <div class="img-inner text-center">
+                                            <img class="img-fluid" src="./img/keto.png" alt="Keto">
                                         </div>
-
-                                        <h3 class="italic--reg--18">The new way to burn fat! Natural, safe & effective pure ketosis formula!</h3>
-
-                                        <span>
-                                            <font class="bold--30">$0.00</font>
-                                            <del>$125.95</del>
-                                        </span>
-
-                                        <p>Shipping: $<span>5.95</span></p>
-                                        <p class="remaining"> Qty Remaining: <span>5</span></p>
                                     </div>
-
-                                    <div class="product--timer">
-                                        <h6 class="bold--18 mt-3 mb-2">
-                                            Offer expires in
-                                            <span id="card5Time" class="time">0:00</span>
-                                        </h6>
-                                        <a href="#" target="_blank" id="card5Btn" class="product--btn">CLAIM ITEM</a>
+                                    <div class="product--desc">
+                                        <div class="text-container">
+                                            <div class="description reg--18">
+                                                <h2 class="semi--25">Keto Rapid Weight Loss</h2>
+                                                <div class="rating-container">
+                                                    <span class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                    <span class="reg--20">(553)</span>
+                                                </div>
+        
+                                                <h3 class="italic--reg--18">The new way to burn fat! Natural, safe & effective pure ketosis formula!</h3>
+        
+                                                <span>
+                                                    <font class="bold--30">$0.00</font>
+                                                    <del>$125.95</del>
+                                                </span>
+        
+                                                <p>Shipping: $<span>5.95</span></p>
+                                                <p class="remaining"> Qty Remaining: <span>5</span></p>
+                                            </div>
+        
+                                            <div class="product--timer">
+                                                <h6 class="bold--18 mt-3 mb-2">
+                                                    Offer expires in
+                                                    <span id="card5Time" class="time">0:00</span>
+                                                </h6>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="product--below">
+                                    <a href="#" target="_blank" id="card5Btn" class="product--btn w-100">CLAIM ITEM</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-xl-6 mt-4">
-                        <div class="product d-flex align-items-center justify-content-center">
-                            <div class="product--img">
-                                <div class="img-inner text-center">
-                                    <img class="img-fluid" src="./img/router.png" alt="Router">
-                                </div>
-                            </div>
-                            <div class="product--desc">
-                                <div class="text-container">
-                                    <div class="description reg--18">
-                                        <h2 class="semi--25">Wifi Booster</h2>
-                                        <div class="rating-container">
-                                            <span class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star-half-alt"></i>
-                                                <i class="far fa-star"></i>
-                                            </span>
-                                            <span class="reg--20">(991)</span>
+    
+                        <div class="col-lg-6 mt-4">
+                            <div class="product">
+                                <div class="product--top d-flex">
+                                    <div class="product--img">
+                                        <div class="img-inner text-center">
+                                            <img class="img-fluid" src="./img/router.png" alt="Router">
                                         </div>
-
-                                        <h3 class="italic--reg--18">Enjoy Boosting Your Wifi From Anywhere In The House.</h3>
-
-                                        <span>
-                                            <font class="bold--30">$0.00</font>
-                                            <del>$59.00</del>
-                                        </span>
-
-                                        <p>Shipping: $<span>9.98</span></p>
-                                        <p class="remaining"> Qty Remaining: <span>3</span></p>
                                     </div>
-
-                                    <div class="product--timer">
-                                        <h6 class="bold--18 mt-3 mb-2">
-                                            Offer expires in
-                                            <span id="card6Time" class="time">0:00</span>
-                                        </h6>
-                                        <a href="#" target="_blank" id="card6Btn" class="product--btn">CLAIM ITEM</a>
+                                    <div class="product--desc">
+                                        <div class="text-container">
+                                            <div class="description reg--18">
+                                                <h2 class="semi--25">Wifi Booster</h2>
+                                                <div class="rating-container">
+                                                    <span class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </span>
+                                                    <span class="reg--20">(991)</span>
+                                                </div>
+        
+                                                <h3 class="italic--reg--18">Enjoy Boosting Your Wifi From Anywhere In The House.</h3>
+        
+                                                <span>
+                                                    <font class="bold--30">$0.00</font>
+                                                    <del>$59.00</del>
+                                                </span>
+        
+                                                <p>Shipping: $<span>9.98</span></p>
+                                                <p class="remaining"> Qty Remaining: <span>3</span></p>
+                                            </div>
+        
+                                            <div class="product--timer">
+                                                <h6 class="bold--18 mt-3 mb-2">
+                                                    Offer expires in
+                                                    <span id="card6Time" class="time">0:00</span>
+                                                </h6>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="product--below">
+                                    <a href="#" target="_blank" id="card6Btn" class="product--btn w-100">CLAIM ITEM</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-xl-6 mt-4">
-                        <div class="product d-flex align-items-center justify-content-center">
-                            <div class="product--img">
-                                <div class="img-inner text-center">
-                                    <img class="img-fluid" src="./img/dyson.png" alt="Dyson">
-                                </div>
-                            </div>
-                            <div class="product--desc">
-                                <div class="text-container">
-                                    <div class="description reg--18">
-                                        <h2 class="semi--25">Dyson Vacuum</h2>
-                                        <div class="rating-container">
-                                            <span class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star-half-alt"></i>
-                                            </span>
-                                            <span class="reg--20">(345)</span>
+    
+                        <div class="col-lg-6 mt-4">
+                            <div class="product">
+                                <div class="product--top d-flex">
+                                    <div class="product--img">
+                                        <div class="img-inner text-center">
+                                            <img class="img-fluid" src="./img/dyson.png" alt="Dyson">
                                         </div>
-
-                                        <h3 class="italic--reg--18">Get the New Dyson Cordless Vacuum! Transforms to a handheld vacuum cleaner in one click.</h3>
-
-                                        <span>
-                                            <font class="bold--30">$0.00</font>
-                                            <del>$250.98</del>
-                                        </span>
-
-                                        <p>Shipping: $<span>4.95</span></p>
-                                        <p class="remaining"> Qty Remaining: <span>3</span></p>
                                     </div>
-
-                                    <div class="product--timer">
-                                        <h6 class="bold--18 mt-3 mb-2">
-                                            Offer expires in
-                                            <span id="card7Time" class="time">0:00</span>
-                                        </h6>
-                                        <a href="#" target="_blank" id="card7Btn" class="product--btn">CLAIM ITEM</a>
+                                    <div class="product--desc">
+                                        <div class="text-container">
+                                            <div class="description reg--18">
+                                                <h2 class="semi--25">Dyson Vacuum</h2>
+                                                <div class="rating-container">
+                                                    <span class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                    </span>
+                                                    <span class="reg--20">(345)</span>
+                                                </div>
+        
+                                                <h3 class="italic--reg--18">Get the New Dyson Cordless Vacuum! Transforms to a handheld vacuum cleaner in one click.</h3>
+        
+                                                <span>
+                                                    <font class="bold--30">$0.00</font>
+                                                    <del>$250.98</del>
+                                                </span>
+        
+                                                <p>Shipping: $<span>4.95</span></p>
+                                                <p class="remaining"> Qty Remaining: <span>3</span></p>
+                                            </div>
+        
+                                            <div class="product--timer">
+                                                <h6 class="bold--18 mt-3 mb-2">
+                                                    Offer expires in
+                                                    <span id="card7Time" class="time">0:00</span>
+                                                </h6>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="product--below">
+                                    <a href="#" target="_blank" id="card7Btn" class="product--btn w-100">CLAIM ITEM</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-xl-6 mt-4">
-                        <div class="product d-flex align-items-center justify-content-center">
-                            <div class="product--img">
-                                <div class="img-inner text-center">
-                                    <img class="img-fluid" src="./img/skincare.png" alt="Skin Care">
-                                </div>
-                            </div>
-                            <div class="product--desc">
-                                <div class="text-container">
-                                    <div class="description reg--18">
-                                        <h2 class="semi--25">Celebrity Skincare Kit</h2>
-                                        <div class="rating-container">
-                                            <span class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                            </span>
-                                            <span class="reg--20">(774)</span>
+    
+                        <div class="col-lg-6 mt-4">
+                            <div class="product">
+                                <div class="product--top d-flex">
+                                    <div class="product--img">
+                                        <div class="img-inner text-center">
+                                            <img class="img-fluid" src="./img/skincare.png" alt="Skin Care">
                                         </div>
-
-                                        <h3 class="italic--reg--18">Better than botox! Get Hollywood's best kept beauty secret! All natural skin cream!</h3>
-
-                                        <span>
-                                            <font class="bold--30">$0.00</font>
-                                            <del>$145.95</del>
-                                        </span>
-
-                                        <p>Shipping: $<span>4.95</span></p>
-                                        <p class="remaining"> Qty Remaining: <span>4</span></p>
                                     </div>
-
-                                    <div class="product--timer">
-                                        <h6 class="bold--18 mt-3 mb-2">
-                                            Offer expires in
-                                            <span id="card8Time" class="time">0:00</span>
-                                        </h6>
-                                        <a href="#" target="_blank" id="card8Btn" class="product--btn">CLAIM ITEM</a>
+                                    <div class="product--desc">
+                                        <div class="text-container">
+                                            <div class="description reg--18">
+                                                <h2 class="semi--25">Celebrity Skincare Kit</h2>
+                                                <div class="rating-container">
+                                                    <span class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </span>
+                                                    <span class="reg--20">(774)</span>
+                                                </div>
+        
+                                                <h3 class="italic--reg--18">Better than botox! Get Hollywood's best kept beauty secret! All natural skin cream!</h3>
+        
+                                                <span>
+                                                    <font class="bold--30">$0.00</font>
+                                                    <del>$145.95</del>
+                                                </span>
+        
+                                                <p>Shipping: $<span>4.95</span></p>
+                                                <p class="remaining"> Qty Remaining: <span>4</span></p>
+                                            </div>
+        
+                                            <div class="product--timer">
+                                                <h6 class="bold--18 mt-3 mb-2">
+                                                    Offer expires in
+                                                    <span id="card8Time" class="time">0:00</span>
+                                                </h6>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="product--below">
+                                    <a href="#" target="_blank" id="card8Btn" class="product--btn w-100">CLAIM ITEM</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-xl-6 mt-4">
-                        <div class="product d-flex align-items-center justify-content-center">
-                            <div class="product--img">
-                                <div class="img-inner text-center">
-                                    <img class="img-fluid" src="./img/fitness.png" alt="Fitness">
-                                </div>
-                            </div>
-                            <div class="product--desc">
-                                <div class="text-container">
-                                    <div class="description reg--18">
-                                        <h2 class="semi--25">Fitness Tracker© Heart + Sleep Monitor!</h2>
-                                        <div class="rating-container">
-                                            <span class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                            <span class="reg--20">(598)</span>
+    
+                        <div class="col-lg-6 mt-4">
+                            <div class="product">
+                                <div class="product--top d-flex">
+                                    <div class="product--img">
+                                        <div class="img-inner text-center">
+                                            <img class="img-fluid" src="./img/fitness.png" alt="Fitness">
                                         </div>
-
-                                        <h3 class="italic--reg--18">Messages, Camera Control, Activity, OLED Screen, Heart Monitoring</h3>
-
-                                        <span>
-                                            <font class="bold--30">$0.00</font>
-                                            <del>$120.97</del>
-                                        </span>
-
-                                        <p>Shipping: $<span>2.25</span></p>
-                                        <p class="remaining"> Qty Remaining: <span>1</span></p>
                                     </div>
-
-                                    <div class="product--timer">
-                                        <h6 class="bold--18 mt-3 mb-2">
-                                            Offer expires in
-                                            <span id="card9Time" class="time">0:00</span>
-                                        </h6>
-                                        <a href="#" target="_blank" id="card9Btn" class="product--btn">CLAIM ITEM</a>
+                                    <div class="product--desc">
+                                        <div class="text-container">
+                                            <div class="description reg--18">
+                                                <h2 class="semi--25">Fitness Tracker© Heart + Sleep Monitor!</h2>
+                                                <div class="rating-container">
+                                                    <span class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                    <span class="reg--20">(598)</span>
+                                                </div>
+        
+                                                <h3 class="italic--reg--18">Messages, Camera Control, Activity, OLED Screen, Heart Monitoring</h3>
+        
+                                                <span>
+                                                    <font class="bold--30">$0.00</font>
+                                                    <del>$120.97</del>
+                                                </span>
+        
+                                                <p>Shipping: $<span>2.25</span></p>
+                                                <p class="remaining"> Qty Remaining: <span>1</span></p>
+                                            </div>
+        
+                                            <div class="product--timer">
+                                                <h6 class="bold--18 mt-3 mb-2">
+                                                    Offer expires in
+                                                    <span id="card9Time" class="time">0:00</span>
+                                                </h6>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="product--below">
+                                    <a href="#" target="_blank" id="card9Btn" class="product--btn w-100">CLAIM ITEM</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-xl-6 mt-4">
-                        <div class="product d-flex align-items-center justify-content-center">
-                            <div class="product--img">
-                                <div class="img-inner text-center">
-                                    <img class="img-fluid" src="./img/enhancement.png" alt="Enhancement">
-                                </div>
-                            </div>
-                            <div class="product--desc">
-                                <div class="text-container">
-                                    <div class="description reg--18">
-                                        <h2 class="semi--25">Male Enhancement Formula</h2>
-                                        <div class="rating-container">
-                                            <span class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star-half-alt"></i>
-                                            </span>
-                                            <span class="reg--20">(447)</span>
+    
+                        <div class="col-lg-6 mt-4">
+                            <div class="product">
+                                <div class="product--top d-flex">
+                                    <div class="product--img">
+                                        <div class="img-inner text-center">
+                                            <img class="img-fluid" src="./img/enhancement.png" alt="Enhancement">
                                         </div>
-
-                                        <h3 class="italic--reg--18">Improve strength! Get a surge in sex drive & energy! Increased confidence!</h3>
-
-                                        <span>
-                                            <font class="bold--30">$0.00</font>
-                                            <del>$139.95</del>
-                                        </span>
-
-                                        <p>Shipping: $<span>5.95</span></p>
-                                        <p class="remaining"> Qty Remaining: <span>3</span></p>
                                     </div>
-
-                                    <div class="product--timer">
-                                        <h6 class="bold--18 mt-3 mb-2">
-                                            Offer expires in
-                                            <span id="card10Time" class="time">0:00</span>
-                                        </h6>
-                                        <a href="#" target="_blank" id="card10Btn" class="product--btn">CLAIM ITEM</a>
+                                    <div class="product--desc">
+                                        <div class="text-container">
+                                            <div class="description reg--18">
+                                                <h2 class="semi--25">Male Enhancement Formula</h2>
+                                                <div class="rating-container">
+                                                    <span class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                    </span>
+                                                    <span class="reg--20">(447)</span>
+                                                </div>
+        
+                                                <h3 class="italic--reg--18">Improve strength! Get a surge in sex drive & energy! Increased confidence!</h3>
+        
+                                                <span>
+                                                    <font class="bold--30">$0.00</font>
+                                                    <del>$139.95</del>
+                                                </span>
+        
+                                                <p>Shipping: $<span>5.95</span></p>
+                                                <p class="remaining"> Qty Remaining: <span>3</span></p>
+                                            </div>
+        
+                                            <div class="product--timer">
+                                                <h6 class="bold--18 mt-3 mb-2">
+                                                    Offer expires in
+                                                    <span id="card10Time" class="time">0:00</span>
+                                                </h6>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="product--below">
+                                    <a href="#" target="_blank" id="card10Btn" class="product--btn w-100">CLAIM ITEM</a>
                                 </div>
                             </div>
                         </div>

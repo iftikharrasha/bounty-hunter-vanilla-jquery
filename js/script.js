@@ -2,6 +2,7 @@ var answered = 0;
 var prevProgress = 0;
 var stepsTotal = 0;
 var progress = 0;
+var speed = 0;
 var txt = '';
 
 var months = [
@@ -23,48 +24,60 @@ var questions = [
   {
     id: 1,
     questionText:
-      "Do you have a club membership to any wholesale stores such as Costco, Sam's Club, or Smart and Final?",
+      "When is the last time that you purchased a product from a 'welgreens'' store or online?",
     totalSurveySteps: 2,
     surveyStep: 1,
     isFinalQuestion: false,
     answers: [
       {
         id: 1,
-        answerText: 'Yes',
+        letter: 'A',
+        answerText: "Within the last week",
       },
       {
         id: 2,
-        answerText: 'No',
+        letter: 'B',
+        answerText: "Within the last month",
       },
       {
         id: 3,
-        answerText: 'Not Sure',
+        letter: 'C',
+        answerText: "within the last year",
+      },
+      {
+        id: 4,
+        letter: 'D',
+        answerText: "Never",
       },
     ],
   },
   {
     id: 2,
     questionText:
-      "Do you feel that large Wholesale Stores provide good value for your money?",
+      "What method of payment do you use for online shopping?",
     totalSurveySteps: 2,
     surveyStep: 2,
     isFinalQuestion: true,
     answers: [
       {
         id: 1,
-        answerText: 'Definitely',
+        letter: 'A',
+        answerText: "Debit card",
       },
       {
         id: 2,
-        answerText: 'Somewhat',
+        letter: 'B',
+        answerText: "Credit card",
       },
       {
         id: 3,
-        answerText: 'Not Really',
+        letter: 'C',
+        answerText: "Other",
       },
       {
         id: 4,
-        answerText: 'Definitely Not',
+        letter: 'D',
+        answerText: "I don't make online purchases",
       },
     ],
   },
@@ -116,7 +129,9 @@ var cards = [
 window.onload = function () {
     var fiveMinutes = 30 * 10;
     var display = document.querySelector('#timer');
+    var display2 = document.querySelector('#timer2');
     startExpire(fiveMinutes, display);
+    startExpire(fiveMinutes, display2);
 
     const date = new Date();
     const month = date.getMonth();
@@ -147,14 +162,13 @@ function startExpire(duration, display) {
 }
 
 function startSurvey() {
-    //screen #1
-    $('#header').hide();
-    $('#hero').hide();
+    //screen #2
+    $('#promo--img').hide();
+    $('#hero--contents').hide();
+    $('#bounty').addClass('ques--card');
 
     const question = questions[0];
     const nextQuestion = question.id + 1;
-    const questionCount = questions.id;
-    const questLength = questions.length;
 
     //progress count
     answered = question.surveyStep - 1;
@@ -162,48 +176,39 @@ function startSurvey() {
     
     //get current progress bar
     progress = (answered / stepsTotal) * 100;
+    speed = progress*20;
+
     if (question.isFinalQuestion != true) {
       $({ someValue: prevProgress }).animate(
         { someValue: progress },
         {
-          duration: 1000,
+          duration: speed,
           easing: 'swing',
-          step: function () {
-            $('#percentCount').text(Math.round(this.someValue));
+          step: function (someValue) {
+            $('#bar').css({
+              transform: "rotate("+ (45+(someValue*1.8)) +"deg)", // 100%=180° so: ° = % * 1.8
+              // 45 is to add the needed rotation to have the green borders at the bottom
+            });
+            $('#percentCount').text(someValue|0);
           },
         }
       );
       $('#survey').show();
+      $('#box--img').show();
+      $('#progress--bar').show();
       $('#progressBar').show();
-      $('#progressLine').css('width', progress + '%');
       $('#questionText').html(question.questionText);
       $('#questionBody').show();
 
       for (var i = 0; i < question.answers.length; i++) {
         $('#questionLive').html(question.surveyStep);
-        $('#questionLength').html(question.totalSurveySteps);
         $('#questionBody').append(
-            `<button id="` + question.answers[i].id + `"class="mb-4 question--btn" value="` + question.answers[i].value + `"onClick="nextQuestion(` + nextQuestion + `)">` + question.answers[i].answerText + `</button>`
+            `<button id="` + question.answers[i].id + `"class="mb-4 question--btn" value="` + question.answers[i].value + `"onClick="nextQuestion(` + nextQuestion + `)">` + `<span class="letter mr-3">` + question.answers[i].letter + `</span>` + question.answers[i].answerText + `</button>`
         );
       }
     }else {
       validateScreen();
     }
-    cheers(progress);
-}
-
-function cheers(prog = '100') {
-  if (prog == 0) {
-      txt = " - Let's begin!"
-  }
-  if (prog > 0 && prog <= 50) {
-      txt = "- Almost there!"
-  }
-  if (prog > 50 && prog <= 100) {
-      txt = "- Almost there!"
-  }
-
-  $("#shoutOuts").text(txt);
 }
 
 function nextQuestion(questionId) {
@@ -219,10 +224,8 @@ function nextQuestion(questionId) {
     $('#questionText').append(question.questionText);
 
     for (var i = 0; i < question.answers.length; i++) {
-      $('#questionLive').html(question.surveyStep);
-      $('#questionLength').html(question.totalSurveySteps);
       $('#questionBody').append(
-        `<button id="` + question.answers[i].id + `"class="mb-4 question--btn" value="` + question.answers[i].value + `"onClick="nextQuestion(` + nextQuestion + `)">` + question.answers[i].answerText + `</button>`
+        `<button id="` + question.answers[i].id + `"class="mb-4 question--btn" value="` + question.answers[i].value + `"onClick="nextQuestion(` + nextQuestion + `)">` + `<span class="letter mr-3">` + question.answers[i].letter + `</span>` + question.answers[i].answerText + `</button>`
       );
     }
 
@@ -231,35 +234,43 @@ function nextQuestion(questionId) {
     var stepsTotal = question.totalSurveySteps;
     var prevProgress = $('#percentCount').text();
     var progress = (answered / stepsTotal) * 100;
-    $('#progressLine').css('width', progress + '%');
+    speed = progress*20;
+    
+    console.log(progress);
 
     $({ someValue: prevProgress }).animate(
       { someValue: progress },
       {
-        duration: 1000,
+        duration: speed,
         easing: 'swing',
-        step: function () {
-          $('#percentCount').text(Math.round(this.someValue));
-        },
-      }
-    );
+        step: function(someValue) {
+          $('#bar').css({
+            transform: "rotate("+ (45+(someValue*1.8)) +"deg)", // 100%=180° so: ° = % * 1.8
+            // 45 is to add the needed rotation to have the green borders at the bottom
+          });
+          $('#percentCount').text(someValue|0);
+        }
+      });
   }else{
     let prevProgress = $('#percentCount').text();
     let progress = 100;
-    $('#progressLine').css('width', progress + '%');
+    speed = progress*30;
+
     $({ someValue: prevProgress }).animate(
       { someValue: progress },
       {
-        duration: 1000,
+        duration: speed,
         easing: 'swing',
-        step: function () {
-          $('#percentCount').text(Math.round(this.someValue));
-        },
-      }
-    );
+        step: function(someValue) {
+          $('#bar').css({
+            transform: "rotate("+ (45+(someValue*1.8)) +"deg)", // 100%=180° so: ° = % * 1.8
+            // 45 is to add the needed rotation to have the green borders at the bottom
+          });
+          $('#percentCount').text(someValue|0);
+        }
+      });
     validateScreen();
   }
-  cheers(progress);
 }
 
 function validateScreen() {
@@ -267,42 +278,41 @@ function validateScreen() {
   $('#choices').hide();
 
   setTimeout(function () {
-    $('#progressBar').addClass('transit--down');
+    $('#validate').show();
   }, 0);
 
   setTimeout(function () {
-    $('#validate').show();
+    $('#ticked1').addClass('fade--gone');
   }, 1000);
 
   setTimeout(function () {
-    $('#ticked1').addClass('fade--gone');
+    $('#ticked2').addClass('fade--gone');
   }, 2000);
 
   setTimeout(function () {
-    $('#ticked2').addClass('fade--gone');
+    $('#ticked3').addClass('fade--gone');
   }, 3000);
 
   setTimeout(function () {
-    $('#ticked3').addClass('fade--gone');
-  }, 4000);
-
-  setTimeout(function () {
     $('#survey').hide();
-    $('#header').show();
     $('#offers').show();
     $('#comment').show();
+    $(`#footer`).addClass('footer--bg');
   }, 4500);
 
   setTimeout(function () {
+    $('#hero').hide();
     $('#products').show();
 
     cards.forEach((val, index) => {
       var timeDisplay = document.querySelector(`#${val.time}`);
       const randomTime = getRandom(5, 7) * 60;
-      if (index + 1 === cards.length || index + 1 === 3) {
-        startTimer(5, timeDisplay, val.btn);
+      if (index + 1 === 3) {
+        startTimer(30, timeDisplay, val.btn, 1);
+      }else if(index + 1 === cards.length){
+        startTimer(40, timeDisplay, val.btn, 1);
       } else {
-        startTimer(randomTime, timeDisplay, val.btn);
+        startTimer(randomTime, timeDisplay, val.btn, 0);
       }
     });
   }, 4500);
@@ -316,28 +326,31 @@ function getRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function startTimer(duration, display, btnId) {
+function startTimer(duration, display, btnId, flag) {
   var timer = duration,
   minutes,
   seconds;
   var timeInterval = setInterval(function () {
-  minutes = parseInt(timer / 60, 10);
-  seconds = parseInt(timer % 60, 10);
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
 
-  minutes = minutes < 10 ? '' + minutes : minutes;
-  seconds = seconds < 10 ? '0' + seconds : seconds;
+    minutes = minutes < 10 ? '' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
 
-  display.textContent = minutes + ':' + seconds;
+    display.textContent = minutes + ':' + seconds;
 
-  if (--timer < 0) {
-    clearInterval(timeInterval);
-    $(`#${btnId}`).text('EXPIRED');
-    $(`#${btnId}`).addClass('btn--expired');
-    $(`#${btnId}`).css( "cursor", "not-allowed" );
-    $(`#${btnId}`).prop('onclick', null).off('click');
-    $(`#${btnId}`).removeAttr('href');
-    $(`#${btnId}`).parent().parent().parent().parent().addClass('grayed--out');
-    $(`#${btnId}`).parent().css( "opacity", "1" );
-  }
-}, 1000);
+    if (flag === 1 && --timer < 0) {
+      clearInterval(timeInterval);
+      $(`#${btnId}`).text('EXPIRED');
+      $(`#${btnId}`).addClass('btn--expired');
+      $(`#${btnId}`).prop('onclick', null).off('click');
+      $(`#${btnId}`).removeAttr('href');
+      $(`#${btnId}`).parent().parent().addClass('grayed--out');
+      $(`#${btnId}`).parent().css( "opacity", "1" );
+    }
+    if(flag === 0 && --timer < 0) {
+        clearInterval(timeInterval);
+        startTimer(duration, display, btnId, 0);
+    }
+  }, 1000);
 }

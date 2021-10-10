@@ -18,22 +18,18 @@ html {
     @media (min-width: 768px) and (max-width: 991.98px) {
         font-size: 12px;
     }
-    
     @media (min-width: 992px) and (max-width: 1299.98px) {
-        font-size: 13px;
+        font-size: 12px;
     }
     @media (min-width: 1300px) and (max-width: 1531.98px){
         font-size: 13px;
     }
-    @media (min-width: 2500px) {
-        font-size: 20px;
-    }
 }
 
 body {
-    font-family: $font;
-    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 35%);
-    color: $black;
+    font-family: $font1;
+    background-color: $color_main_bg;
+    color: $color_black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: all 0.3s ease-in-out;
@@ -82,6 +78,9 @@ a, select , input , textarea , button{
     @media (min-width: 576px) and (max-width: 991.98px) {
         font-size: 1rem;
     }
+    @media (min-width: 992px) and (max-width: 1299.98px) {
+        font-size: 0.9rem;
+    }
     @media (min-width: 1300px) and (max-width: 1531.98px){
         font-size: 1rem;
     }
@@ -103,6 +102,11 @@ a, select , input , textarea , button{
 
 .reg--20 {
     font-size: 1.25rem;
+}
+
+.reg--20--2 {
+    font-family: $font2;
+    font-size: 1.25rem;
     @media (max-width: 376px) {
         font-size: 1rem;
     }
@@ -117,6 +121,12 @@ a, select , input , textarea , button{
     @media (max-width: 376px) {
         font-size: 0.8rem;
     }
+}
+
+.medi--16--2 {
+    font-family: $font2;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .semi--20 {
@@ -170,6 +180,12 @@ a, select , input , textarea , button{
   font-weight: 700;
 }
 
+.bold--20--2 {
+    font-family: $font2;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
 .bold--22 {
     font-size: 1.375rem;
     font-weight: 700;
@@ -186,9 +202,28 @@ a, select , input , textarea , button{
     }
 }
 
-.bold--45 {
-  font-size: 2.8125rem;
-  font-weight: 700;
+.bold--30--2 {
+    font-family: $font2;
+    font-size: 1.875rem;
+    font-weight: 700;
+    @media (max-width: 575.98px) {
+        font-size: 1.5rem;
+    }
+    @media (max-width: 376px) {
+        font-size: 1.5rem;
+    }
+}
+
+.bold--50--2 {
+    font-family: $font2;
+    font-size: 3.125rem;
+    font-weight: 700;
+}
+
+.black--16--2 {
+    font-family: $font2;
+    font-size: 1rem;
+    font-weight: 900;
 }
 
 .black--23 {
@@ -198,18 +233,20 @@ a, select , input , textarea , button{
 
 /* button settings */
 .start--btn {
-    // background: linear-gradient(-45deg, $primary 0%, $secondary 100%);
-    background: $accent;
-    color: $white;
-    border-radius: 3.5rem;
-    border: 0.5rem solid transparent;
+    background-color: $color_start_btn_bg;
+    color: $color_start_btn_color;
     transition: all .1s ease-in-out;
-    padding: 1rem 2.5rem;
+    padding: .5rem 2.5rem;
+    border-radius: .5rem;
+    border: 0.4rem solid $color_start_btn_stroke;
+    @media (max-width: 320px) {
+        padding: .5rem 1.2rem;
+    }
     img{
         transition: all .3s ease-in-out;
     }
     &:hover{
-        border: 0.5rem solid $primary;
+        background-color: $color_start_btn_hover;
         img{
             transform: translateX(1rem);
         }
@@ -217,22 +254,37 @@ a, select , input , textarea , button{
 }
 
 .question--btn {
+    background-color: $color_ques_btn_bg;
+    color: $color_ques_btn_color;
+    border: 0.4rem solid $color_ques_btn_stroke;
     display: block;
-    width: 50%;
-    margin: 0 auto;
+    width: 40%;
+    text-align: left;
     padding: 1.2rem;
-    font-size: 1.25rem;
+    margin: 0 1rem;
+    font-family: $font2;
+    font-size: 1.1875rem;
     font-weight: 700;
-    border-radius: 50rem;
-    color: $white;
-    background-color: var(--accent);
-    border-color: transparent;
+    border-radius: .5rem;
     @media (max-width: 575.98px) {
-        width: 90%;
-        font-size: 1.5rem;
+        width: 100%;
+        font-size: 1.2rem;
+        margin: 0;
+    }
+    @media (max-width: 320px) {
+        font-size: 1rem;
+    }
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        width: 80%;
+        margin: 0 .5rem;
+    }
+    @media (min-width: 768px) and (max-width: 991.98px){
+        width: 47%;
+        margin: 0 .5rem;
     }
     &:hover{
-        background-color: var(--secondary);
+        background-color: $color_ques_btn_hover;
+        border: 0.4rem solid #8988B2;
     }
 }
 
@@ -241,24 +293,21 @@ a, select , input , textarea , button{
     text-align: center;
     width: 70%;
     padding: .8rem;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    border-radius: .8rem;
-    color: $white;
-    background-color: var(--accent);
-    border-color: transparent;
+    background-color: $color_product_btn_bg;
+    color: $color_product_btn_color;
+    border: 0.4rem solid $color_product_btn_stroke;
     @media (max-width: 575.98px) {
         width: 90%;
         padding: .5rem;
-        font-size: 1rem;
     }
     @media (max-width: 376px) {
-        font-size: 0.8rem;
         padding: .8rem;
     }
     &:hover{
-        color: $white;
-        background-color: var(--secondary);
+        color: $color_white;
+        background-color: $color_product_btn_hover;
     }
 }
 
@@ -267,38 +316,31 @@ a, select , input , textarea , button{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
-    padding: 2.5rem 2rem;
+    padding: 6rem 2rem 1.5rem 2rem;
     border-radius: 0.75rem;
-    box-shadow: 1px 1px 14px -1px rgba(0,0,0,0.50);
+    border: 0.375rem solid #F3F3F3;
     @media (max-width: 767.98px) {
-        width: 100%;
-        min-height: 32rem;
+        background: url(../img/pattern-xs.png), #ffffff;
     }
-    @media (min-width: 768px) and (max-width: 991.98px) {
-        width: 100%;
+    @media (min-width: 768px) {
+        background: url(../img/pattern-xl.png), #ffffff;
+    }
+    @media (max-width: 575.98px) {
+        padding: 3rem 1rem 1.5rem 1rem;
+    }
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        padding: 2rem 1rem 1.5rem 1rem;
     }
     @media (min-width: 1300px) and (max-width: 1531.98px){
-        width: 65%;
-    }
-    @media (min-width: 1532px) and (max-width: 2499.99px) {
         width: 80%;
-    }
-    @media (min-width: 2500px) {
-        width: 100%;
-    }
-    @media (max-width: 320px) {
-        min-height: 33rem;
-    }
-    @media (min-width: 321px) and (max-width: 376px) {
-        min-height: 30rem;
     }
 }
 
 /* header starts */
 .header{
-    background-color: $accent;
+    background-color: $color_blue;
     padding: 1rem 1.25rem;
     animation: fadeIn .5s;
 }
@@ -307,46 +349,29 @@ a, select , input , textarea , button{
 .hero{
     animation: fadeIn .1s;
     .hero--banner{
-        background-image: url(../img/hero-bg.png);
+        background-color: $color_main_bg;
         width: 100%;
-        min-height: 43.75rem;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        @media (max-width: 767.98px) {
-            min-height: 60rem;
-        }
-        @media (max-width: 575.98px) {
-            background-image: url(../img/hero-bg-xs.png);
-            min-height: 56rem;
-        }
-        @media (max-width: 320px) {
-            min-height: 58rem;
-        }
-        @media (min-width: 321px) and (max-width: 376px) {
-            min-height: 54rem;
-        }
-        @media (min-width: 2500px) {
-            min-height: 47rem;
-        }
         .hero--title{
+            position: relative;
+            z-index: 1;
             @media (max-width: 575.98px) {
                 padding: 3rem 0 !important;
             }
             h1{
-                color: $accent;
+                color: $color_red;
             }
             h2 {
                 position: relative;
                 margin: 0 auto;
                 max-width: 37.5rem;
+                color: $color_blue;
                 &:before, &:after {
                     position: absolute;
                     content: "";
                     width: 6.25rem;
-                    height: 0.1875rem;
+                    height: 0.25rem;
                     top: 50%;
-                    background: $black;
+                    background: $color_black;
                     @media (max-width: 575.98px) {
                         width: 8rem;
                     }
@@ -377,14 +402,7 @@ a, select , input , textarea , button{
                 }
             }
         }
-    
         .bounty--card{
-            @media (max-width: 575.98px) {
-                background-image: url(../img/pattern-xs-1.png);
-            }
-            @media (min-width: 576px) {
-                background-image: url(../img/pattern-xl-1.png);
-            }
             .circle--wrapper{
                 position: relative;
                 @media (max-width: 575.98px) {
@@ -400,8 +418,8 @@ a, select , input , textarea , button{
                 }
                 .subPromo {
                     position: absolute;
-                    background-color: $accent;
-                    color: $white;
+                    background-color: $color_red;
+                    color: $color_white;
                     width: 8.4375rem;
                     height: 8.4375rem;
                     flex-direction: column;
@@ -419,7 +437,7 @@ a, select , input , textarea , button{
                     @media (min-width: 321px) and (max-width: 376px) {
                         right: .2rem;
                     }
-                    @media (max-width: 575.98px) {
+                    @media (max-width: 767.98px) {
                         left: 10rem;
                         right: 0;
                         margin-left: auto;
@@ -428,20 +446,37 @@ a, select , input , textarea , button{
                 }
                 .promo {
                     position: absolute;
-                    background-color: $white;
+                    background-color: $color_main_bg;
                     width: 11.25rem;
                     height: 11.25rem;
                     border-radius: 100%;
-                    border: 0.125rem solid #F5F5F5;
-                    @media (max-width: 575.98px) {
+                    left: 41%;
+                    bottom: 0.75rem;
+                    @media (max-width: 767.98px) {
                         left: 0;
-                        right: 6rem;
+                        right: 0;
+                        bottom: 4.75rem;
                         margin-left: auto;
                         margin-right: auto;
                     }
+                    @media (max-width: 575.98px) {
+                        bottom: 1.75rem;
+                    }
+                    @media (min-width: 576px) and (max-width: 767.98px) {
+                        bottom: 0.75rem;
+                    }
+                    @media (min-width: 768px) and (max-width: 991.98px) {
+                        left: 39%;
+                    }
                     .promo--circle {
-                        padding: 1.875rem 1.5625rem;
-                        animation: heartbeat 3s infinite linear;
+                        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+                        width: 11.3rem;
+                        height: 11.3rem;
+                        border: 0.375rem solid #F3F3F3;
+                        border-bottom-color: transparent;
+                        border-left-color: transparent;
+                        transform: rotate(135deg);
+                        border-radius: 50%;
                         @keyframes heartbeat {
                             0% {
                                 transform: scale(0.8);
@@ -454,162 +489,301 @@ a, select , input , textarea , button{
                             }
                         }
                     }
+                    img{
+                        animation: heartbeat 3s infinite linear;
+                        position: absolute;
+                        width: 8rem;
+                    }
+                    #box--img{
+                        animation: none;
+                        bottom: 5rem;
+                        width: auto;
+                    }
+                    .progress--bar{
+                        position: absolute;
+                        bottom: 2rem;
+                        display: flex;
+                        justify-content: center;
+                        align-content: center;
+                        .barOverflow{
+                            position: absolute;
+                            overflow: hidden; 
+                            width: 9.3rem;
+                            height: 4.65rem;
+                            left: -4.6rem;
+                            bottom: -1.15rem;
+                            transform: scaleX(1) scaleY(-1);
+                            .bar{
+                              position: absolute;
+                              top: 0; left: 0;
+                              width: 9.3rem;
+                              height: 9.3rem; 
+                              border-radius: 50%;
+                              box-sizing: border-box;
+                              border: 0.625rem solid #D04500; 
+                              border-left-color: #EDEDED;
+                              border-top-color: #EDEDED;
+                            }
+                        }
+                        .bar--count{
+                            position: absolute;
+                            bottom: 1rem;
+                            color: $color_blue;
+                        }
+                    }
+                }
+            }
+
+            .hero--contents {
+                .start--div{
+                    position: relative;
+                    :before{
+                        content:'';
+                        display:block;
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        bottom:0;
+                        right:0;
+                        background: linear-gradient(60deg, #ffffff00 0%, #ffffff00 35%, #ffffff99 50%, #ffffff00 62%, #ffffff00 100%);
+                        animation-name: shimmer;
+                        animation-duration: 4s;
+                        animation-iteration-count: infinite;
+                        background-repeat:no-repeat;
+                        border-radius: 3.5rem;
+                    }
+                    @keyframes shimmer {
+                        0% {
+                        background-position: -62rem 0%;
+                        }
+                        100% {
+                        background-position: 62rem 0%;
+                        }
+                    }
+                }
+                .details{
+                    width: 58%;
+                    margin: 0 auto;
+                    @media (max-width: 575.98px) {
+                        width: 90%;
+                    }
+                    @media (min-width: 576px) and (max-width: 767.98px) {
+                        width: 90%;
+                    }
+                    @media (min-width: 768px) and (max-width: 991.98px) {
+                        width: 70%;
+                    }
+                    @media (min-width: 992px) and (max-width: 1299.98px) {
+                        width: 52%;
+                    }
+                }
+                .timer{
+                    color: $color_red;
+                }
+            }
+            
+            /* question starts */
+            .survey{
+                display: none;
+                animation: fadeIn .5s;
+                .survey--card{
+                    @media (max-width: 575.98px) {
+                        border-radius: 4rem;
+                        margin-top: 2rem;
+                    }
+                    @media (min-width: 1300px) and (max-width: 1531.98px){
+                        width: 100%;
+                        margin: 3rem auto;
+                    }
+                    .survey--inner{
+                        @media (max-width: 575.98px) {
+                            width: 100%;
+                        }
+                        @media (min-width: 576px) and (max-width: 991.98px) {
+                            width: 100%;
+                        }
+                        .progress--bar{
+                            .progress--detail{
+                                background: #EBEBEB;
+                                overflow: hidden;
+                                height: .8rem;
+                                border-radius: 1rem;
+                                .progress {
+                                    background: $color_blue;
+                                    width: 0;
+                                    height: inherit;
+                                    border-top-right-radius: 1rem;
+                                    border-bottom-right-radius: 1rem;
+                                    transition: 1s ease all;
+                                }
+                            }
+                        }
+                        .transit--down{
+                            padding-top: 7rem;
+                            transition: all .8s ease-in-out;
+                        }
+                        .question {
+                            width: 80%;
+                            margin: 0 auto;
+                            @media (max-width: 575.98px) {
+                                width: 100%;
+                            }
+                            h4{
+                                @media (max-width: 575.98px) {
+                                    font-size: 2rem;
+                                }
+                            }
+                            h2{
+                                @media (min-width: 767.98px) {
+                                    min-height: 6rem;
+                                }
+                                @media (max-width: 575.98px) {
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+                        .choices{
+                            #questionBody{
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: center;
+                                align-items: center;
+                                .letter{
+                                    padding: .7rem 1rem;
+                                    background-color: #E2E2F1;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+                        .validate{
+                            animation: fadeIn .3s;
+                            img{
+                                position: relative;
+                                bottom: 3rem;
+                            }
+                            .validate--table{
+                                width: 70%;
+                                margin: 0 auto;
+                                @media (max-width: 767.98px) {
+                                    width: 100%;
+                                }
+                                @media (min-width: 2500px) {
+                                    width: 80%;
+                                }
+                                p{
+                                    @media (max-width: 320px) {
+                                        font-size: 0.9rem;
+                                    }
+                                    @media (min-width: 321px) and (max-width: 376px) {
+                                        font-size: 1.1rem;
+                                    }
+                                    span{
+                                        img{
+                                            @media (max-width: 575.98px) {
+                                                width: 2rem;
+                                            }
+                                        }
+                                    }
+                                }             
+                            }
+                            .fade--opacity{
+                                opacity: .5;
+                            }
+                            .fade--gone{
+                                color: #474747;
+                                font-weight: 700;
+                                opacity: 1;
+                            }
+                        }
+                    }
                 }
             }
         }
-        .start{
-            .start--div{
-                position: relative;
-                :before{
-                    content:'';
-                    display:block;
-                    position:absolute;
-                    top:0;
-                    left:0;
-                    bottom:0;
-                    right:0;
-                    background: linear-gradient(60deg, #ffffff00 0%, #ffffff00 35%, #ffffff99 50%, #ffffff00 62%, #ffffff00 100%);
-                    animation-name: shimmer;
-                    animation-duration: 4s;
-                    animation-iteration-count: infinite;
-                    background-repeat:no-repeat;
-                    border-radius: 3.5rem;
-                  }
-                  @keyframes shimmer {
-                    0% {
-                      background-position: -62rem 0%;
+
+        .ques--card{
+            padding: 5rem 2rem 0rem 2rem;
+            @media (max-width: 575.98px) {
+                padding: 0 1rem 0 1rem;
+            }
+            @media (max-width: 320px) {
+                padding: 0;
+            }
+            @media (min-width: 576px) and (max-width: 767.98px) {
+                padding: 2rem 1rem 0rem 1rem;
+            }
+            @media (min-width: 768px) and (max-width: 991.98px) {
+                padding: 5rem 1rem 0rem 1rem;
+            }
+            .circle--wrapper{
+                .promo{
+                    bottom: -0.25rem;
+                }
+                .promo--sm {
+                    @media (max-width: 575.98px) {
+                        bottom: -1.25rem;
                     }
-                    100% {
-                      background-position: 62rem 0%;
+                    @media (min-width: 576px) and (max-width: 767.98px) {
+                        bottom: 0.75rem;
                     }
-                  }
+                }
             }
         }
     }
 
     .expired{
-        background-color: $black;
-        color: $white;
+        background-color: $color_blue;
+        color: $color_white;
         position: fixed;
         z-index: 999;
         bottom: 0;
         width: 100%;
         p{
-            @media (max-width: 575.98px) {
-                font-size: 1.3rem;
+            .watch{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1rem 1.2rem;
+                background-color: $color_red;
+                border-radius: 50%;
+                img{
+                    @media (max-width: 575.98px) {
+                        width: 1.5rem;
+                    }
+                }
             }
-            @media (max-width: 320px) {
-                font-size: 1.1rem;
-            }
-            .timer{
-                background-color: $red;
-                border-radius: 1rem;
-            }
-            img{
+            .limited{
+                display: flex;
+                align-items: center;
                 @media (max-width: 575.98px) {
-                    width: 1.3rem;
+                    font-size: 1.3rem;
                 }
                 @media (max-width: 320px) {
-                    width: 1rem;
+                    font-size: 1rem;
                 }
-            }
-        }
-    }
-}
-
-/* question starts */
-.survey{
-    display: none;
-    animation: fadeIn .5s;
-    .survey--card{
-        background-color: $white;
-        width: 100%;
-        padding: 2.5rem 2rem;
-        border-radius: 7rem;
-        margin-top: 3rem;
-        box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.50);
-        min-height: 40rem;
-        @media (max-width: 575.98px) {
-            border-radius: 4rem;
-            margin-top: 2rem;
-        }
-        @media (min-width: 1300px) and (max-width: 1531.98px){
-            width: 80%;
-            margin: 3rem auto;
-        }
-        .survey--inner{
-            width: 65%;
-            margin: 0 auto;
-            padding: 3rem 0;
-            @media (max-width: 575.98px) {
-                width: 100%;
-            }
-            @media (min-width: 576px) and (max-width: 991.98px) {
-                width: 90%;
-            }
-            .progress--bar{
-                .progress--detail{
-                    background: #EBEBEB;
-                    overflow: hidden;
-                    height: .8rem;
+                @media (min-width: 321px) and (max-width: 376px) {
+                    font-size: 1.2rem;
+                }
+                .timer{
+                    color: $color_red;
                     border-radius: 1rem;
-                    .progress {
-                        background: $primary;
-                        width: 0;
-                        height: inherit;
-                        border-top-right-radius: 1rem;
-                        border-bottom-right-radius: 1rem;
-                        transition: 1s ease all;
-                    }
-                }
-            }
-            .transit--down{
-                padding-top: 7rem;
-                transition: all .8s ease-in-out;
-            }
-            .question {
-                @media (max-width: 575.98px) {
-                    h4{
+                    font-size: 2.5rem;
+                    @media (max-width: 575.98px) {
                         font-size: 2rem;
                     }
-                    h2{
-                        font-size: 1.2rem;
+                    @media (min-width: 321px) and (max-width: 376px) {
+                        font-size: 1.5rem;
+                    }
+                    @media (max-width: 320px) {
+                        font-size: 1.5rem;
                     }
                 }
-            }
-            .validate{
-                animation: fadeIn .3s;
-                .validate--table{
-                    width: 70%;
-                    margin: 0 auto;
+                img{
                     @media (max-width: 575.98px) {
-                        width: 100%;
+                        width: 1.3rem;
                     }
-                    @media (min-width: 2500px) {
-                        width: 80%;
+                    @media (max-width: 320px) {
+                        width: 1rem;
                     }
-                    p{
-                        @media (max-width: 320px) {
-                            font-size: 0.9rem;
-                        }
-                        @media (min-width: 321px) and (max-width: 376px) {
-                            font-size: 1.1rem;
-                        }
-                        span{
-                            img{
-                                @media (max-width: 575.98px) {
-                                    width: 2rem;
-                                }
-                            }
-                        }
-                    }             
-                }
-                .fade--opacity{
-                    opacity: .5;
-                }
-                .fade--gone{
-                    font-weight: 700;
-                    opacity: 1;
                 }
             }
         }
@@ -620,102 +794,107 @@ a, select , input , textarea , button{
 .offers{
     display: none;
     animation: fadeIn .5s;
-    background-color: $white;
-    .bounty--card{
-        min-height: 0;
-        @media (max-width: 575.98px) {
-            background-image: url(../img/pattern-xs-2.png);
-        }
-        @media (min-width: 576px) {
-            background-image: url(../img/pattern-xl-2.png);
-        }
-    }
-
-    .coupon{
-        color: $green;
-        border: 3px dashed $green;
-        padding: 0.3rem;
-        width: 30%;
-        margin: 0 auto;
-        opacity: 0;
-        @media (max-width: 575.98px) {
-            width: 65%;
-        }
-        @media (min-width: 576px) and (max-width: 767.98px) {
+    background-color: $color_white;
+    .offers--top{
+        background: url(../img/pattern-offer.png), #CEE6FE;
+        .coupon--bg{
+            background-color: $color_white;
             width: 50%;
+            margin: 0 auto;
+            padding-top: 0.2rem;
+            border-top-left-radius: .8rem;
+            border-top-right-radius: .8rem;
+            @media (max-width: 575.98px) {
+                width: 100%;
+            }
+            @media (min-width: 576px) and (max-width: 767.98px) {
+                width: 100%;
+            }
+            
+            @media (min-width: 768px) and (max-width: 991.98px) {
+                width: 65%;
+            }
+            .coupon{
+                color: $color_green;
+                border: 3px dashed $color_green;
+                padding: 0.3rem;
+                width: 85%;
+                margin: 0 auto;
+                opacity: 0;
+                @media (max-width: 575.98px) {
+                    width: 90%;
+                }
+                @media (min-width: 576px) and (max-width: 767.98px) {
+                    width: 75%;
+                }  
+                p{
+                    @media (min-width: 321px) and (max-width: 376px) {
+                        font-size: 1rem;
+                    }      
+                    @media (max-width: 320px) {
+                        font-size: 0.8rem;
+                        span{
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+        
+            .fadeInUp{
+                animation-name: fadeInUp;
+                animation-duration: 1s;
+                animation-fill-mode: both;
+            }
         }
-        @media (min-width: 768px) and (max-width: 991.98px) {
-            width: 35%;
-        }
-        @media (min-width: 992px) and (max-width: 1299.98px) {
-            width: 30%;
-        }
-        @media (min-width: 1300px) and (max-width: 1531.98px){
-            width: 25%;
-        }
-        @media (min-width: 2500px) {
-            width: 35%;
-        }
-        @media (max-width: 320px) {
-            width: 80%;
-        }
-        @media (min-width: 321px) and (max-width: 376px) {
-            width: 70%;
-        }
-    }
-
-    .fadeInUp{
-        animation-name: fadeInUp;
-        animation-duration: 1s;
-        animation-fill-mode: both;
     }
 
     .products{
-        display: none;
+        // display: none;
         @media (min-width: 1300px){
             max-width: 82.5rem;
         }
         .product{
             width: 100%;
-            box-shadow: 0rem 0rem 0.5rem rgba(0,0,0,0.10);
-            border-radius: 0.5rem;
-            .product--img{
-                position: relative;
-                width: 50%;
-                background-color: #F7F7F7;
-                .product--badge{
-                    position: absolute;
-                    margin: 0.8rem;
+            border: 0.1875rem solid #F7F7F7;
+            .product--top{
+                .product--img{
+                    position: relative;
+                    width: 50%;
+                    background-color: #F7F7F7;
+                    min-height: 22rem;
                     @media (max-width: 575.98px) {
-                        width: 35%;
+                        min-height: 17rem;
                     }
-                }
-            }
-            .product--desc{
-                width: 50%;
-                padding: 1rem;
-                .rating{
-                    -webkit-text-fill-color: $accent;
-                    -webkit-text-stroke-width: 0.07rem;
-                    -webkit-text-stroke-color: $chocolate;
-                }
-                .remaining{
-                    color: $red;
-                }
-                .product--timer{
-                    h6{
-                        span{
-                            color: $red;
+                    .product--badge{
+                        position: absolute;
+                        margin: 0.8rem;
+                        @media (max-width: 575.98px) {
+                            width: 35%;
                         }
                     }
-                    .btn--expired{
-                        background-color: $red;
+                }
+                .product--desc{
+                    width: 50%;
+                    padding: 1rem;
+                    .rating{
+                        -webkit-text-fill-color: #DC9A33;
+                        -webkit-text-stroke-width: 0.07rem;
+                        -webkit-text-stroke-color: #C57D22;
+                    }
+                    .remaining{
+                        color: $color_red;
+                    }
+                    .product--timer{
+                        h6{
+                            span{
+                                color: $color_red;
+                            }
+                        }
                     }
                 }
             }
         }
         .grayed--out{
-            border: 0.2rem solid $red;
             .product--img{
                 opacity: .3;
             }
@@ -724,21 +903,33 @@ a, select , input , textarea , button{
                     opacity: .3;
                 }
             }
+            .product--btn{
+                background-color: #fc3a3a;
+                border: 0.4rem solid #FF6868;
+                cursor: not-allowed;
+            }
         }
     }
 }
 
 /* footer starts */
 .footer{
+    background: $color_main_bg;
     animation: fadeIn .5s;
-    padding: 7rem 0;
+    padding: 3rem 0 6rem 0;
     @media (max-width: 575.98px) {
         padding: 5rem 0;
+    }
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        padding-bottom: 7rem;
+    }
+    @media (min-width: 1300px) and (max-width: 1531.98px){
+        padding-bottom: 7rem;
     }
     .conditions{
         width: 80%;
         margin: 0 auto;
-        color: $chocolate;
+        color: #474747;
         @media (max-width: 991.98px) {
             width: 100%;
         }
@@ -750,7 +941,7 @@ a, select , input , textarea , button{
         }
         p{
             a{
-                color: $chocolate;
+                color: #474747;
             }
             u{
                 @media (max-width: 575.98px) {
@@ -769,10 +960,7 @@ a, select , input , textarea , button{
             max-width: 60rem;
         }
         .modal-content{
-            border-radius: 7rem;
-            @media (max-width: 575.98px) {
-                border-radius: 3rem;
-            }
+            border-radius: 1rem;
         }
         .modal-header {
             border-bottom: none;
@@ -787,7 +975,7 @@ a, select , input , textarea , button{
             }
         }
         .terms--body{
-            color: $chocolate;
+            color: #976116;
             padding: 0rem 7rem 3rem 7rem;
             @media (max-width: 575.98px) {
                 padding: 0rem 3rem 3rem 3rem
@@ -799,12 +987,12 @@ a, select , input , textarea , button{
         display: none;
         animation: fadeIn .5s;
         .comment--card{
-            background-color: $white;
+            background-color: $color_white;
             width: 100%;
             padding: 2.5rem 2rem;
-            border-radius: 7rem;
+            border-radius: 1rem;
             margin: 0 0 3rem 0;
-            box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.50);
+            box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.20);
             @media (max-width: 767.98px) {
                 padding: 1.5rem 1rem;
                 border-radius: 4rem;
@@ -848,7 +1036,7 @@ a, select , input , textarea , button{
                         }
                     }
                     .verified{
-                        color: $green;
+                        color: $color_green;
                         font-size: 0.875rem;
                         font-weight: 700;
                         font-style: italic;
@@ -859,9 +1047,9 @@ a, select , input , textarea , button{
                                 font-size: 1rem;
                             }
                             i{
-                                -webkit-text-fill-color: $accent;
+                                -webkit-text-fill-color: #DC9A33;
                                 -webkit-text-stroke-width: 0.03rem;
-                                -webkit-text-stroke-color: $accent;
+                                -webkit-text-stroke-color: #DC9A33;
                             }
                         }
                     }
@@ -869,6 +1057,10 @@ a, select , input , textarea , button{
             }
         }
     }
+}
+
+.footer--bg{
+    background: url(../img/pattern-offer.png), #CEE6FE;
 }
 
 @keyframes fadeIn{
