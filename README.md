@@ -1,7 +1,7 @@
-### `Bounty Hunter with raw jquery-` [Live Link](http://reward.iftikharrasha.com/).
+### `Bounty Hunter with raw jquery-` [Live Link](https://iftikharrasha.github.io/bounty-hunter-vanilla-jquery/).
 
 <p align="center">
-  <a href="http://reward.iftikharrasha.com/">
+  <a href="https://iftikharrasha.github.io/bounty-hunter-vanilla-jquery/">
     <img alt="Logo" src="./img/favicon.png" width="100"/>
   </a>
 </p>
