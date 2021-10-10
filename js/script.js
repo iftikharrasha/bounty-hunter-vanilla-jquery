@@ -299,12 +299,10 @@ function validateScreen() {
     cards.forEach((val, index) => {
       var timeDisplay = document.querySelector(`#${val.time}`);
       const randomTime = getRandom(5, 7) * 60;
-      if (index + 1 === 3) {
-        startTimer(30, timeDisplay, val.btn, 1);
-      }else if(index + 1 === cards.length){
-        startTimer(40, timeDisplay, val.btn, 1);
+      if (index + 1 === cards.length || index + 1 === 3) {
+        startTimer(5, timeDisplay, val.btn);
       } else {
-        startTimer(randomTime, timeDisplay, val.btn, 0);
+        startTimer(randomTime, timeDisplay, val.btn);
       }
     });
   }, 4500);
@@ -318,7 +316,7 @@ function getRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function startTimer(duration, display, btnId, flag) {
+function startTimer(duration, display, btnId) {
   var timer = duration,
   minutes,
   seconds;
@@ -331,7 +329,7 @@ function startTimer(duration, display, btnId, flag) {
 
   display.textContent = minutes + ':' + seconds;
 
-  if (flag === 1 && --timer < 0) {
+  if (--timer < 0) {
     clearInterval(timeInterval);
     $(`#${btnId}`).text('EXPIRED');
     $(`#${btnId}`).addClass('btn--expired');
@@ -340,10 +338,6 @@ function startTimer(duration, display, btnId, flag) {
     $(`#${btnId}`).removeAttr('href');
     $(`#${btnId}`).parent().parent().parent().parent().addClass('grayed--out');
     $(`#${btnId}`).parent().css( "opacity", "1" );
-  }
-  if(flag === 0 && --timer < 0) {
-      clearInterval(timeInterval);
-      startTimer(duration, display, btnId, 0);
   }
 }, 1000);
 }
